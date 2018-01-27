@@ -1,0 +1,20 @@
+{
+  "name": "benchmarks-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "benchr src/benchmarks/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "benchr": "^3.4.0",
+    "lodash": "^4.17.4",
+    "microtime": "^2.1.7",
+    "ramda": "^0.25.0",
+    "transducers-js": "^0.4.174"
+  }
+}
