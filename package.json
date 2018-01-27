@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bench": "benchr",
-    "prof":"node --prof node_modules/benchr/bin/benchr",
-    "process_prof": "node --prof-process $(ls -t *v8.log | head -1) > profile.$(date '+%Y-%m-%d_%H:%M:%S').txt",
+    "prof": "node --prof node_modules/benchr/bin/benchr",
+    "prof_process": "node --prof-process $(ls -t *v8.log | head -1) > profile.$(date '+%Y-%m-%d_%H:%M:%S').txt",
+    "profile": "npm run prof -- src/benchmarks/*.js && npm run prof_process",
     "start": "benchr src/benchmarks/*.js"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "benchr": "^3.4.0",
+    "faker": "^4.1.0",
     "lodash": "^4.17.4",
     "microtime": "^2.1.7",
     "ramda": "^0.25.0",
