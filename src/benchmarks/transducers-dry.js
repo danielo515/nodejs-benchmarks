@@ -22,7 +22,6 @@ module.exports = (suite, benchmark) => {
 
     const makeBenchmarks = (set) => () => { 
 
-        console.info('Actual set size',set.length);
         benchmark('Native filter and map', () => {
 
             set.map(inc).filter(isEven);

@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "bench": "benchr",
+    "prof":"node --prof node_modules/benchr/bin/benchr",
+    "process_prof": "node --prof-process $(ls -t *v8.log | head -1) > profile.$(date '+%Y-%m-%d_%H:%M:%S').txt",
     "start": "benchr src/benchmarks/*.js"
   },
   "keywords": [],
