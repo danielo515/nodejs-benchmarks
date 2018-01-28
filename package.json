@@ -1,7 +1,7 @@
 {
   "name": "benchmarks-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "A framework for easy benchmarking NodeJs code",
   "main": "index.js",
   "scripts": {
     "cm": "git-cz",
@@ -17,7 +17,10 @@
     "start": "node src/run.js"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Danielo Rodríguez",
+    "url": "danielorodriguez.com"
+  },
   "license": "ISC",
   "dependencies": {
     "benchr": "^3.4.0",
@@ -42,5 +45,9 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "url": "git@github.com:danielo515/nodejs-benchmarks.git",
+    "type": "git"
   }
 }
