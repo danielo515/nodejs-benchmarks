@@ -1,6 +1,6 @@
 {
   "name": "benchmarks-js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A framework for easy benchmarking NodeJs code",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "prof": "node --prof node_modules/benchr/bin/benchr",
     "prof_process": "node --prof-process $(ls -t *v8.log | head -1) > profile.$(date '+%Y-%m-%d_%H:%M:%S').txt",
     "profile": "npm run prof -- src/benchmarks/*.js && npm run prof_process",
-    "start-all":"benchr src/benchmarks/*.js",
+    "start-all": "benchr src/benchmarks/*.js",
     "start": "node src/run.js"
   },
   "keywords": [],
