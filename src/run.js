@@ -25,5 +25,5 @@ recursive(benchmarksDir, ['*.!(js)'])
     .then(askForBenchmark)
     .then(({ toRun }) => {
         
-        Runner(runOptions,toRun).run();
+        new Runner(runOptions,toRun).run();
     });
