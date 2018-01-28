@@ -13,6 +13,7 @@ const askForBenchmark = (files) => {
             name: 'toRun',
             message: 'Select which benchmarks you want to run',
             choices: files,
+            validate: answers => !!answers.length || 'You must select at least one benchmark'
         }
     ])
 }
