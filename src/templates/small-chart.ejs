@@ -1,0 +1,13 @@
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <%= title %>
+          </div>
+          <div class="chart-stage">
+              <div id="<%- 'chart-' + index -%>"></div>            
+          </div>
+          <div class="chart-notes">
+            Fastest <%= (fastest.length > 1 ? 'are' : 'is') + ': ' + fastest.join() %>
+          </div>
+        </div>
+      </div>
