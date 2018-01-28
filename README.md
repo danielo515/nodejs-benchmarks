@@ -1,5 +1,7 @@
 # NodeJs benchmark framework
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/danielo515/nodejs-benchmarks.svg)](https://greenkeeper.io/)
+
 This repository is a collection of tools, conventions and libraries aimed at
 making easy the benchmarking of JavaScript code under NodeJs.
 
