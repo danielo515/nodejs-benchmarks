@@ -21,7 +21,7 @@
 
   <!-- Dashboard -->
   <style>
-    <%- include('keen-dashboards.css') %>
+      <%- include('keen-dashboards.css'); %>
   </style>
 </head>
 <body class="keen-dashboard" style="padding-top: 80px;">
@@ -53,13 +53,12 @@
 
   <div class="container-fluid">
     <div class="row">
-        <% data.suites.forEach(({name, fastest },index) => { %>
+        <% data.suites.forEach(({name, fastest },index) => { -%>
           <%- include('small-chart.ejs', {title: name, index, fastest}); %>
         <% }) %>
-
     </div>
-    <div class="row">
 
+    <div class="row">
       <div class="col-sm-12">
         <div class="chart-wrapper">
           <div class="chart-title">
