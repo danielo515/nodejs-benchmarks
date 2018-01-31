@@ -1,13 +1,13 @@
 'use strict';
 const Ejs = require('ejs');
-const data = require('../../reports/example');
+const data = require('../../reports/report');
 const path = require('path');
 const fs = require('fs');
+const push = (arr, val) => arr.push(val) && arr;
+const templatePath = path.join(__dirname, 'dashboard.ejs');
+const renderDashboard = Ejs.compile(fs.readFileSync(templatePath, 'utf8'), { filename: templatePath });
 
-Ejs.renderFile(path.join(__dirname, 'dashboard.ejs'), {data: data[0]}, {}, function(err, str){
-    if(err){
-        return console.error(err);
-    }
-
-    fs.writeFileSync(path.join(__dirname,'../../reports','report.html'),str,'utf8');
-});
+data.reduce(
+    (reports, data) => push(reports, { markup: renderDashboard({ data }), filename: path.basename(data.name).replace(/\.\w+$/, '') })
+    , [])
+    .forEach((dashBoard) => fs.writeFileSync(path.join(__dirname, '../../reports', dashBoard.filename + '.html'), dashBoard.markup, 'utf8'));

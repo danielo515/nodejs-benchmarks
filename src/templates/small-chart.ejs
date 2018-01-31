@@ -8,7 +8,7 @@
               <div id="<%- 'chart-' + index -%>"></div>            
           </div>
           <div class="chart-notes">
-            Fastest <%= (fastest.length > 1 ? 'are' : 'is') + ': ' + fastest.join() %>
+            Fastest <%= ((fastest||[]).length > 1 ? 'are' : 'is') + ': ' + (fastest||[]).join() %>
           </div>
         </div>
       </div>

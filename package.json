@@ -13,9 +13,9 @@
     "prof": "node --prof node_modules/benchr/bin/benchr",
     "prof_process": "node --prof-process $(ls -t *v8.log | head -1) > profile.$(date '+%Y-%m-%d_%H:%M:%S').txt",
     "profile": "npm run prof -- src/benchmarks/*.js && npm run prof_process",
-    "report-json": "benchr -v -R json src/benchmarks/transducers.js > reports/example.json",
-    "report-compile":"node src/templates/compile.js",
-    "report":"npm run report-json && npm run report-compile",
+    "report-json": "benchr -v -R json src/benchmarks/**.js > reports/report.json",
+    "report-compile": "node src/templates/compile.js",
+    "report": "npm run report-json && npm run report-compile",
     "start-all": "benchr src/benchmarks/*.js",
     "start": "node src/run.js"
   },
