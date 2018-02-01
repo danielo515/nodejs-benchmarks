@@ -26,7 +26,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "benchr": "^3.4.0",
+    "benchr": "^4.0.0",
     "ejs": "^2.5.7",
     "faker": "^4.1.0",
     "inquirer": "^5.0.1",

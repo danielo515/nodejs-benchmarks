@@ -6,7 +6,7 @@ const { writeObj } = require('./utils');
 const makePath = (...args) => Join(__dirname, ...args);
 const inquirer = require('inquirer');
 const { map } = require('lodash/fp');
-const Runner = require('benchr/lib/runner.js')
+const Runner = require('benchr')
 
 const askForBenchmark = (files) => {
 
@@ -36,7 +36,8 @@ recursive(benchmarksDir, ['*.!(js)'])
     .then(askForBenchmark)
     .then(({ toRun, outputType }) => {
 
-        const runOptions = { '--delay': '0', '--max-time': '5', '--min-time': '0', '--reporter': outputType, '--verbose': true };
+        const reporter = require(`benchr/lib/reporters/${outputType}`);
+        const runOptions = { progress: true, reporter, verbose: false, maxTime: 5, minTime: 0, delay: 0 };
         // The json reporter uses console.log to report, so we just cheat here
         if (outputType === 'json') console.log = (format, stats) => writeObj(makePath('../reports/report.json'), stats);
         new Runner(runOptions, toRun).run();
