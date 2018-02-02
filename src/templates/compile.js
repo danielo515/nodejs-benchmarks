@@ -3,11 +3,30 @@ const Ejs = require('ejs');
 const data = require('../../reports/report');
 const path = require('path');
 const fs = require('fs');
-const push = (arr, val) => arr.push(val) && arr;
+const { push, makeFileWriter } = require('../utils');
+const writeStr = makeFileWriter(__dirname);
 const templatePath = path.join(__dirname, 'dashboard.ejs');
+const idxTemplatePath = path.join(__dirname, 'index.ejs');
 const renderDashboard = Ejs.compile(fs.readFileSync(templatePath, 'utf8'), { filename: templatePath });
+const renderIndex = Ejs.compile(fs.readFileSync(idxTemplatePath, 'utf8'), { filename: idxTemplatePath });
 
-data.files.reduce(
-    (reports, data) => push(reports, { markup: renderDashboard({ data }), filename: path.basename(data.name).replace(/\.\w+$/, '') })
+const makeIndex = (reports) => {
+
+    writeStr(
+        renderIndex({ reports })
+        , '../../reports'
+        , 'index.html'
+    )
+}
+
+const reports = data.files.reduce(
+    (reports, data) => push(reports, { markup: renderDashboard({ data }), name: path.basename(data.name).replace(/\.\w+$/, '') })
     , [])
-    .forEach((dashBoard) => fs.writeFileSync(path.join(__dirname, '../../reports', dashBoard.filename + '.html'), dashBoard.markup, 'utf8'));
+    .map(({ name, markup }) => {
+
+        const fileName = name + '.html';
+        writeStr(markup, '../../reports', fileName);
+        return { fileName, name }
+    });
+
+makeIndex(reports);
