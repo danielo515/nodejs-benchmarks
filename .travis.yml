@@ -2,6 +2,7 @@ language: node_js
 node_js:
  - "8"
 script:
+ - npm run start-all
  - npm run report-compile
 deploy:
   provider: pages
