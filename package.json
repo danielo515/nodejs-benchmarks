@@ -16,6 +16,7 @@
     "report-json": "benchr -v -R json src/benchmarks/**.js > reports/report.json",
     "report-compile": "node src/templates/compile.js",
     "report": "npm run report-json && npm run report-compile",
+    "run-all": "benchr -v -R json src/benchmarks/*.js > reports/report.json",
     "start-all": "benchr src/benchmarks/*.js",
     "start": "node src/run.js"
   },
