@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+ - "8"
+script:
+ - npm run report-compile
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: ./reports
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
