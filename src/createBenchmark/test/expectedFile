@@ -1,0 +1,13 @@
+'use strict';
+module.exports = (suite, benchmark) => {
+    
+    suite(`My first test suite`, () => {
+
+        benchmark(`Testing the console`, () => {
+
+            console.log("anus");
+        });
+
+    });
+
+};

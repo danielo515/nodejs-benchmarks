@@ -1,0 +1,15 @@
+'use strict';
+module.exports = (suite, benchmark) => {
+    
+    suite(`My second test suite`, () => {
+
+        benchmark(`Testing basic math`, () => {
+
+            const sum = (x, y) => x + y;
+            const result = [1, 2, 3, 4, 5].reduce(sum);
+            console.log(result);
+        });
+
+    });
+
+};

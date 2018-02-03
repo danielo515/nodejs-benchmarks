@@ -8,7 +8,8 @@
     "commit": "commit",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "release": "standard-version",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "lab src -P spec --assert code -v",
+    "test-cov-html": "lab -r html -o coverage.html",
     "bench": "benchr",
     "prof": "node --prof node_modules/benchr/bin/benchr",
     "prof_process": "node --prof-process $(ls -t *v8.log | head -1) > profile.$(date '+%Y-%m-%d_%H:%M:%S').txt",
@@ -41,9 +42,11 @@
     "@commitlint/cli": "6.0.2",
     "@commitlint/config-conventional": "^6.0.2",
     "@commitlint/prompt-cli": "^6.0.2",
+    "code": "^5.1.2",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "husky": "0.14.3",
+    "lab": "^15.2.1",
     "standard-version": "^4.3.0"
   },
   "config": {

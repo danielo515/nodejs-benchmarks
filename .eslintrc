@@ -6,11 +6,16 @@
     },
     "ecmaFeatures": {
         "modules": true,
-        "experimentalObjectRestSpread": true
+        "experimentalObjectRestSpread": false
     },
     "rules": {
         "no-unused-vars": "error",
         "strict": "error",
-        "no-undef": "error"
+        "no-undef": "error",
+        "semi": 2,
+        "indent": [
+            "error",
+            4
+        ]
     }
 }
