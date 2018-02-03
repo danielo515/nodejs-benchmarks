@@ -6,16 +6,16 @@ const { makeBenchmark, makeMain, makeSuite } = require('./templates');
 
 const eslintConfig = JSON.parse(readFile(__dirname, '../../.eslintrc'));
 
-module.exports = ({ suites, title }) => {
+module.exports = (definition) => {
 
-    const body = suites.map(({ title, benchmarks: benches }) => {
+    definition.body = definition.suites.map(({ title, benchmarks: benches }) => {
 
         const benchmarks = benches.map(makeBenchmark).join('');
         return makeSuite({ title, body: benchmarks })
     }).join('');
 
     const { fixed, messages, output } = linter.verifyAndFix(
-        makeMain({ title, body }),
+        makeMain(definition),
         eslintConfig
     );
 

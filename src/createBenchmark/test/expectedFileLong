@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (suite, benchmark) => {
     
     suite(`Math reduction with 5 numbers`, () => {

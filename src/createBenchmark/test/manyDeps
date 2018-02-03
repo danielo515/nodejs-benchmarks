@@ -1,4 +1,7 @@
 'use strict';
+const lodash = require ('lodash');
+const ramda = require ('ramda');
+const transducersJs = require ('transducers-js');
 
 module.exports = (suite, benchmark) => {
     
