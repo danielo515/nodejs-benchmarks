@@ -63,7 +63,59 @@ describe('Full file creation', () => {
         };
         const benchFileText = makeBenchFile(description);
         const expected = await readFile(Join(__dirname, './manyDeps'), 'utf8');
-        await writeFile('testFour', benchFileText, 'utf8');
+        expect(benchFileText).to.equal(expected);
+    });
+
+    it('Create file with dependency destructuring', async () => {
+
+        const makeCode = (funName) => `const result = [1, 2, 3, 4, 5].reduce(${funName});
+        console.log(result);`;
+        const description = {
+            title: 'test file',
+            dependencies: [{ name: 'lodash', destructuring: ['add', 'divide', 'multiply'] }],
+            suites: [{
+                title: 'Lodash test suite',
+                benchmarks: [
+                    { title: 'Testing lodash add', body: makeCode('add') },
+                    { title: 'Testing lodash divide', body: makeCode('divide') },
+                    { title: 'Testing lodash multiply', body: makeCode('multiply') },
+                ]
+            }]
+        };
+        const benchFileText = makeBenchFile(description);
+        const expected = await readFile(Join(__dirname, './destructuring'), 'utf8');
+        // await writeFile('testFour', benchFileText, 'utf8');
+        expect(benchFileText).to.equal(expected);
+    });
+
+    it('Create file with several dependencies using aliasing and destructuring', async () => {
+
+        const makeCode = (funName) => `const result = [1, 2, 3, 4, 5].reduce(${funName});
+        console.log(result);`;
+        const description = {
+            title: 'test file',
+            dependencies: [
+                { name: 'lodash', destructuring: ['add', 'divide', 'multiply'] },
+                { name: 'ramda', alias: 'R' },
+                { name: 'fake-lib' }
+
+            ],
+            suites: [{
+                title: 'Lodash test suite',
+                benchmarks: [
+                    { title: 'Testing fakeLib add', body: makeCode('fakeLib.add') },
+                    { title: 'Testing lodash add', body: makeCode('add') },
+                    { title: 'Testing lodash divide', body: makeCode('divide') },
+                    { title: 'Testing lodash multiply', body: makeCode('multiply') },
+                    { title: 'Testing ramda add', body: makeCode('R.add') },
+                    { title: 'Testing ramda divide', body: makeCode('R.divide') },
+                    { title: 'Testing ramda multiply', body: makeCode('R.multiply') },
+                ]
+            }]
+        };
+        const benchFileText = makeBenchFile(description);
+        const expected = await readFile(Join(__dirname, './aliasing'), 'utf8');
+        // await writeFile('aliasing', benchFileText, 'utf8');
         expect(benchFileText).to.equal(expected);
     });
 

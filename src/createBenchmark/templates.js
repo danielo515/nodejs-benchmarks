@@ -1,9 +1,15 @@
 'use strict';
 const { camelCase } = require('lodash');
-const makeRequire = (dep) => `const ${camelCase(dep)} = require ('${dep}');\n`;
+const makeRequire = ({ varName, require }) => `const ${varName} = require ('${require}');\n`;
+const formatDeps = (dep) => typeof dep === 'string'
+    ? { varName: camelCase(dep), require: dep }
+    : {
+        require: dep.name,
+        varName: dep.destructuring ? `{ ${dep.destructuring.join(', ')} }` : dep.alias || camelCase(dep.name)
+    };
 
 const makeMain = ({ body, dependencies = [] }) => `'use strict';
-${dependencies.map(makeRequire).join('')}
+${dependencies.map(formatDeps).map(makeRequire).join('')}
 module.exports = (suite, benchmark) => {
     ${body}
 };`;

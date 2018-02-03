@@ -8,7 +8,7 @@
     "commit": "commit",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "release": "standard-version",
-    "test": "lab src -P spec --assert code -v",
+    "test": "lab src -P spec --assert code -v --coverage",
     "test-cov-html": "lab -r html -o coverage.html",
     "bench": "benchr",
     "prof": "node --prof node_modules/benchr/bin/benchr",

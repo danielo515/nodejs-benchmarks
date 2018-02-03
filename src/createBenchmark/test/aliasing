@@ -1,0 +1,48 @@
+'use strict';
+const { add, divide, multiply } = require ('lodash');
+const R = require ('ramda');
+const fakeLib = require ('fake-lib');
+
+module.exports = (suite, benchmark) => {
+    
+    suite(`Lodash test suite`, () => {
+
+        benchmark(`Testing fakeLib add`, () => {
+
+            const result = [1, 2, 3, 4, 5].reduce(fakeLib.add);
+            console.log(result);
+        });
+        benchmark(`Testing lodash add`, () => {
+
+            const result = [1, 2, 3, 4, 5].reduce(add);
+            console.log(result);
+        });
+        benchmark(`Testing lodash divide`, () => {
+
+            const result = [1, 2, 3, 4, 5].reduce(divide);
+            console.log(result);
+        });
+        benchmark(`Testing lodash multiply`, () => {
+
+            const result = [1, 2, 3, 4, 5].reduce(multiply);
+            console.log(result);
+        });
+        benchmark(`Testing ramda add`, () => {
+
+            const result = [1, 2, 3, 4, 5].reduce(R.add);
+            console.log(result);
+        });
+        benchmark(`Testing ramda divide`, () => {
+
+            const result = [1, 2, 3, 4, 5].reduce(R.divide);
+            console.log(result);
+        });
+        benchmark(`Testing ramda multiply`, () => {
+
+            const result = [1, 2, 3, 4, 5].reduce(R.multiply);
+            console.log(result);
+        });
+
+    });
+
+};
