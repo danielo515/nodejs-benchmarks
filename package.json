@@ -19,6 +19,7 @@
     "report-compile": "node src/templates/compile.js",
     "report": "npm run report-json && npm run report-compile",
     "run-all": "benchr -v -R json src/benchmarks/*.js > reports/report.json",
+    "start-server": "nodemon --inspect src/server",
     "start-all": "benchr src/benchmarks/*.js",
     "start": "node src/run.js"
   },
@@ -30,9 +31,12 @@
   "license": "ISC",
   "dependencies": {
     "benchr": "^4.0.0",
+    "boom": "^7.1.1",
     "ejs": "^2.5.7",
     "faker": "^4.1.0",
+    "hapi": "^17.2.0",
     "inquirer": "^5.0.1",
+    "joi": "^13.1.2",
     "lodash": "^4.17.4",
     "microtime": "^2.1.7",
     "ramda": "^0.25.0",

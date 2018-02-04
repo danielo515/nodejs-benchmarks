@@ -17,6 +17,7 @@
         JSONEditor.defaults.theme = 'bootstrap3';
         JSONEditor.defaults.iconlib = 'bootstrap3';
         JSONEditor.defaults.options.disable_collapse = true;
+        JSONEditor.default.options.remove_empty_properties=true;
         JSONEditor.defaults.options.disable_properties = true;
         JSONEditor.defaults.options.disable_edit_json = true;
         JSONEditor.defaults.editors.object.options.collapsed = false;
@@ -25,7 +26,12 @@
     <div class="content">
         <div class="container">
             <div class='row'>
+
                 <div id='editor_holder' class='medium-12 columns'></div>
+                <span id="error-message"></span>
+                <pre>
+                    <code id="generated-code"></code>                
+                </pre>
             </div>
 
             <div class='row'>
@@ -49,15 +55,16 @@
             );
 
         var errorSpan = document.getElementById('error-message');
+        var generatedCode = document.getElementById('generated-code');
         editor.root.setValue(initialValue, true);
         // On submit call the API
         document.getElementById('submit').addEventListener('click',function() {
             var bench = editor.getValue();
             console.log(bench);
-            fetch('/api/mobile/kpis',
+            fetch('./create',
             {
                 method: 'POST',
-                body: JSON.stringify(kpi),
+                body: JSON.stringify(bench),
                 credentials: 'include'
             })
             .then(res => res.json())
@@ -67,6 +74,8 @@
                 if(response.id){
                     window.location.replace('view/' + response.id);
                 }
+
+                generatedCode.appendChild(new Text(response.src))
             });
         });
 

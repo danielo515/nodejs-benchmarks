@@ -2,19 +2,15 @@
 const Ejs = require('ejs');
 const data = require('../../reports/report');
 const path = require('path');
-const fs = require('fs');
 const { push, makeFileWriter, readFile } = require('../utils');
 const writeStr = makeFileWriter(__dirname);
 const templatePath = path.join(__dirname, 'dashboard.ejs');
 const idxTemplatePath = path.join(__dirname, 'index.ejs');
-const createBenchTemplatePath = path.join(__dirname, 'create/create.ejs');
-const renderDashboard = Ejs.compile(fs.readFileSync(templatePath, 'utf8'), { filename: templatePath });
-const renderIndex = Ejs.compile(fs.readFileSync(idxTemplatePath, 'utf8'), { filename: idxTemplatePath });
-const renderCreateBench = Ejs.compile(readFile(createBenchTemplatePath), { filename: createBenchTemplatePath });
+const renderDashboard = Ejs.compile(readFile(templatePath), { filename: templatePath });
+const renderIndex = Ejs.compile(readFile(idxTemplatePath), { filename: idxTemplatePath });
+const renderCreateBench = require('./create');
+// const PKG = require('../../package');
 
-// const package = require('../../package');
-
-const createSchema = require('./create/schema');
 
 const makeIndex = (reports) => {
 
@@ -36,7 +32,7 @@ const reports = data.files.reduce(
     });
 
 writeStr(
-    renderCreateBench({ schema: JSON.stringify(createSchema) })
+    renderCreateBench()
     , '../../reports'
     , 'create.html'
 );
