@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
   <meta charset="utf-8">
-  <title>C:\Users\rdani\Documents\trabajo\GIT\benchmarks-js\src\benchmarks\transducers-dry.js</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-
   <!-- Demo Dependencies -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.3.2/holder.min.js" type="text/javascript"></script>
+  <title>C:\Users\rdani\Documents\trabajo\GIT\benchmarks-js\src\benchmarks\transducers-dry.js</title>
   <script>
-    Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
     var rawData = {"name":"C:\\Users\\rdani\\Documents\\trabajo\\GIT\\benchmarks-js\\src\\benchmarks\\transducers-dry.js","suites":[{"name":"Big random array (100000), increasing and finding even numbers","benchmarks":[{"name":"Native filter and map","hz":52.885047867449344,"aborted":false,"stats":{"moe":0.0015260193810942646,"rme":8.070360801582561,"sem":0.0007785813168848289,"deviation":0.005560182750333647,"mean":0.018908936274509798,"variance":0.00003091563221710784}},{"name":"Using transducers","hz":235.53109511929742,"aborted":false,"stats":{"moe":0.000044777003806761575,"rme":1.0546376742767503,"sem":0.0000228454101054906,"deviation":0.0002093816421814395,"mean":0.004245723901098902,"variance":4.384067208259637e-8}},{"name":"Using transducers combined with native","hz":240.72145814331847,"aborted":false,"stats":{"moe":0.00006150533562466282,"rme":1.4805654075163024,"sem":0.00003138027327788919,"deviation":0.0002910086826635428,"mean":0.004154178890876564,"variance":8.468605338557056e-8}},{"name":"Using transducers combined with lodash","hz":284.01252037816437,"aborted":false,"stats":{"moe":0.0000310241002159818,"rme":0.8811232894805744,"sem":0.000015828622559174387,"deviation":0.00014932692656969667,"mean":0.0035209715355805234,"variance":2.229853099875158e-8}}],"fastest":["Using transducers combined with lodash"]},{"name":"Medium random array (50000), increasing and finding even numbers","benchmarks":[{"name":"Native filter and map","hz":142.08726855316024,"aborted":false,"stats":{"moe":0.00027082706002078306,"rme":3.8481077208635845,"sem":0.00013817707143917504,"deviation":0.0011724713306296643,"mean":0.0070379282407407396,"variance":0.0000013746890211484957}},{"name":"Using transducers","hz":471.0825716331701,"aborted":false,"stats":{"moe":0.00007616376600189533,"rme":3.5879422753439867,"sem":0.00003885906428668129,"deviation":0.0003645303350844835,"mean":0.0021227701048951043,"variance":1.3288236519680581e-7}},{"name":"Using transducers combined with native","hz":491.4520939219556,"aborted":false,"stats":{"moe":0.00002904477367432166,"rme":1.427411483973467,"sem":0.00001481876207873554,"deviation":0.0001405831208188072,"mean":0.0020347863247863252,"variance":1.976361385915534e-8}},{"name":"Using transducers combined with lodash","hz":566.3065482583074,"aborted":false,"stats":{"moe":0.000012973265630627035,"rme":0.7346845278918531,"sem":0.000006619013076850528,"deviation":0.00006279347155586038,"mean":0.0017658280715197971,"variance":3.943020070036646e-9}}],"fastest":["Using transducers combined with lodash"]},{"name":"Small random array (5000), increasing and finding even numbers","benchmarks":[{"name":"Native filter and map","hz":1492.217729181717,"aborted":false,"stats":{"moe":0.000004987240496348538,"rme":0.7442048688344315,"sem":0.0000025445104573206825,"deviation":0.00002413934572575006,"mean":0.0006701434920950624,"variance":5.827080120672878e-10}},{"name":"Using transducers","hz":4775.233378661784,"aborted":false,"stats":{"moe":0.0000025457907245388757,"rme":1.2156744842905605,"sem":0.0000012988728186422835,"deviation":0.000012458350416837416,"mean":0.00020941384864423966,"variance":1.5521049510871302e-10}},{"name":"Using transducers combined with native","hz":4423.330117315849,"aborted":false,"stats":{"moe":0.000008999732383988072,"rme":3.98087873018772,"sem":0.000004591700195912282,"deviation":0.000041579613712846746,"mean":0.00022607401516005704,"variance":1.728864276509553e-9}},{"name":"Using transducers combined with lodash","hz":5418.673547697179,"aborted":false,"stats":{"moe":0.000003951561643407407,"rme":2.1412222549226505,"sem":0.0000020161028792894934,"deviation":0.00001869656895020119,"mean":0.00018454700974281405,"variance":3.495616905096273e-10}}],"fastest":["Using transducers combined with lodash"]},{"name":"Super small random array (500), increasing and finding even numbers","benchmarks":[{"name":"Native filter and map","hz":13046.81682452665,"aborted":false,"stats":{"moe":0.0000033585353713715804,"rme":4.38181957889786,"sem":0.0000017135384547814185,"deviation":0.000015421846093032767,"mean":0.00007664704835282923,"variance":2.3783333691719007e-10}},{"name":"Using transducers","hz":46851.33113347249,"aborted":false,"stats":{"moe":2.907240099294942e-7,"rme":1.3620806857657677,"sem":1.483285764946399e-7,"deviation":0.0000014149644380860911,"mean":0.000021344110739375756,"variance":2.0021243610482876e-12}},{"name":"Using transducers combined with native","hz":50133.610575645056,"aborted":false,"stats":{"moe":8.534033060208211e-8,"rme":0.4278418900801589,"sem":4.35409850010623e-8,"deviation":4.1763045684836176e-7,"mean":0.000019946698203416468,"variance":1.7441519848737137e-13}},{"name":"Using transducers combined with lodash","hz":56674.824242985815,"aborted":false,"stats":{"moe":1.115075885851575e-7,"rme":0.6319672984822973,"sem":5.689162682916199e-8,"deviation":5.486429803651753e-7,"mean":0.000017644518767497756,"variance":3.0100911990398213e-13}}],"fastest":["Using transducers combined with lodash"]}]};
   </script>
 
@@ -97,7 +95,7 @@
 </head>
 <body class="keen-dashboard" style="padding-top: 80px;">
 
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -199,7 +197,7 @@
 
   </div>
   <div class="container-fluid">
-    <p class="small text-muted">Built with &#9829; by <a href="https://keen.io">Keen IO</a></p>
+    <p class="small text-muted">Built with &#9829; by <a href="https://keen.github.io/dashboards/">Keen IO</a></p>
   </div>
 
   <script>
