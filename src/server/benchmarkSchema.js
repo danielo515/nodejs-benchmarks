@@ -10,7 +10,7 @@ const benchmark = Joi.object().keys({
 const dependency = Joi.object().keys({
     name: lowStr.required(),
     alias: str.optional(),
-    destructuring: Joi.array().items(str).optional().min(1)
+    destructuring: Joi.array().items(str).optional()
 });
 
 module.exports = Joi.object().keys({

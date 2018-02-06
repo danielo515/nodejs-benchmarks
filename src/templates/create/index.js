@@ -7,4 +7,6 @@ const renderCreateBench = Ejs.compile(readFile(createBenchTemplatePath), { filen
 const schema = JSON.stringify(require('./schema'));
 
 
+
+
 module.exports = (data = {}) => renderCreateBench(Object.assign({ schema }, data))

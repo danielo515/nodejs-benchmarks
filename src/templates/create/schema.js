@@ -1,5 +1,7 @@
 'use strict';
 const { startCase, assign } = require('lodash');
+const { dependencies } = require('../../../package');
+
 const baseSchema = {
     title: 'New Benchmark',
     type: 'object',
@@ -16,12 +18,16 @@ const makeSchema = (schema, offset = 0) =>
             { [name]: schema(name, i + offset) }
         );
 
-const stringSchema = (name, { format, i } = {}) => ({
-    title: startCase(name),
-    type: 'string',
-    format,
-    propertyOrder: i
-});
+const basicSchema = (name, opts) => assign
+    (
+    { title: startCase(name) },
+    opts
+    );
+
+const stringSchema = (name, opts = {}) => assign(
+    basicSchema(name, opts),
+    { type: 'string' }
+);
 
 const numberSchema = (name, i) => ({
     title: startCase(name),
@@ -48,6 +54,8 @@ const arraySchema = (name, items, { format, uniqueItems = true, i } = {}) => (
 
 const arrayStringSchema = (name, ...args) => arraySchema(name, { type: 'string' }, ...args);
 
+const enumSchema = (name, values) => stringSchema(name, { enum: values });
+
 const benchSchema = objectSchema('benchmark', {
     title: stringSchema('title'),
     body: stringSchema('body', { format: 'javascript' })
@@ -66,9 +74,9 @@ const dependencySchema = arraySchema('dependencies',
     {
         type: 'object',
         properties: {
-            name: stringSchema('name', { i: 0 }),
-            alias: stringSchema('alias', { i: 1 }),
-            destructuring: arrayStringSchema('destructuring', { uniqueItems: true, i: 2, format: 'table' })
+            name: enumSchema('name', Object.keys(dependencies), { propertyOrder: 1 }),
+            alias: stringSchema('alias', { propertyOrder: 2 }),
+            destructuring: arrayStringSchema('destructuring', { uniqueItems: true, i: 3, format: 'table' })
         }
     },
     { format: 'table' });

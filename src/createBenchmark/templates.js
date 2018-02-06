@@ -5,7 +5,7 @@ const formatDeps = (dep) => typeof dep === 'string'
     ? { varName: camelCase(dep), require: dep }
     : {
         require: dep.name,
-        varName: dep.destructuring ? `{ ${dep.destructuring.join(', ')} }` : dep.alias || camelCase(dep.name)
+        varName: (dep.destructuring || []).length ? `{ ${dep.destructuring.join(', ')} }` : dep.alias || camelCase(dep.name)
     };
 
 const makeMain = ({ body, dependencies = [] }) => `'use strict';
