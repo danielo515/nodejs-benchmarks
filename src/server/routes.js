@@ -2,7 +2,7 @@
 const Joi = require('joi');
 const renderCreateBenchmark = require('../templates/create');
 const createBenchMarkSrc = require('../createBenchmark');
-
+const payload = require('./benchmarkSchema');
 
 const register = async (server, options) => {
 
@@ -17,9 +17,18 @@ const register = async (server, options) => {
         }, {
             method: 'POST',
             path: '/create',
+            options: {
+                validate: {
+                    payload,
+                    failAction: async (request, h, err) => {
+                        console.error(err);
+                        throw err;
+                    }
+                }
+            },
             handler: function (request, h) {
 
-                const src = createBenchMarkSrc(JSON.parse(request.payload));
+                const src = createBenchMarkSrc(request.payload);
                 console.log(src);
                 return { src }
             }
