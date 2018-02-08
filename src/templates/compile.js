@@ -1,5 +1,6 @@
 'use strict';
 const Ejs = require('ejs');
+const Os = require('os');
 const path = require('path');
 const { toPairs, nth } = require('ramda');
 const data = require('../../reports/report');
@@ -12,8 +13,13 @@ const renderIndex = Ejs.compile(readFile(idxTemplatePath), { filename: idxTempla
 const renderCreateBench = require('./create');
 // const PKG = require('../../package');
 
-const { platform: _platform, platform:{ os }} = data;
+const { platform: _platform, platform: { os } } = data;
 delete _platform.os;
+Object.assign(_platform, {
+    cpu: Os.cpus()[0].model,
+    'n. of cpus': Os.cpus().length,
+    memory: (Os.totalmem() / 1000000000).toFixed(2) + ' GB'
+});
 const platform = toPairs(_platform).concat(toPairs(os)).filter(nth(1));
 
 const makeIndex = (reports) => {
