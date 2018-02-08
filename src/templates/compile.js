@@ -12,7 +12,7 @@ const renderIndex = Ejs.compile(readFile(idxTemplatePath), { filename: idxTempla
 const renderCreateBench = require('./create');
 // const PKG = require('../../package');
 
-const { platform: _platform, os } = data;
+const { platform: _platform, {platform:os }} = data;
 
 const platform = toPairs(os);
 
