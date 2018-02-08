@@ -1,7 +1,7 @@
 'use strict';
 const Ejs = require('ejs');
 const path = require('path');
-const { toPairs } = require('ramda');
+const { toPairs, nth } = require('ramda');
 const data = require('../../reports/report');
 const { push, makeFileWriter, readFile } = require('../utils');
 const writeStr = makeFileWriter(__dirname);
@@ -13,8 +13,8 @@ const renderCreateBench = require('./create');
 // const PKG = require('../../package');
 
 const { platform: _platform, platform:{ os }} = data;
-
-const platform = toPairs(os);
+delete _platform.os;
+const platform = toPairs(_platform).concat(toPairs(os)).filter(nth(1));
 
 const makeIndex = (reports) => {
 
