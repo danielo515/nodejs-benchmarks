@@ -1,6 +1,11 @@
-
+<% if (length === 4 ) { -%>
+      <div class="col-sm-6">
+<%} else if ((length % 3) === 0 || (length - index)  >= 3) { -%>
       <div class="col-sm-6 col-md-4">
-        <div class="chart-wrapper">
+<% } else { -%>
+    <div class="col-sm-6">
+<% } -%>
+        <div class="chart-wrapper">       
           <div class="chart-title">
             <%= title %>
           </div>

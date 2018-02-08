@@ -23,19 +23,25 @@
   <div class="container-fluid">
 
       <div class="row">
-      <table class="table table-bordered table-striped">
-        <tbody>
-          <% platform.forEach(([label, value] ) => { -%>
-          <tr class="active">
-            <th><%=label%></th><td><%=value%></td>
-          </tr>
-          <% }) %>
-        </tbody>
-      </table>
+        <div class="col-md-4 col-md-offset-4">
+          <table class="table table-bordered table-striped text-center">
+            <thead>
+                <th colspan="2" class="text-center">Platform</th>
+              </thead>
+            <tbody>
+              <% platform.forEach(([label, value] ) => { -%>
+              <tr>
+                <th><%=label%></th><td><%=value%></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+      </div>
     </div>
+
     <div class="row">
-        <% data.suites.forEach(({name, fastest },index) => { -%>
-          <%- include('small-chart.ejs', {title: name, index, fastest}); %>
+        <% data.suites.forEach(({name, fastest },index, {length}) => { -%>
+          <%- include('small-chart.ejs', {title: name, index, fastest, length}); %>
         <% }) %>
     </div>
 
