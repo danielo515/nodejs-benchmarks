@@ -21,6 +21,18 @@
   <% include partials/header %>
 
   <div class="container-fluid">
+
+      <div class="row">
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <% platform.forEach(([label, value] ) => { -%>
+          <tr class="active">
+            <th><%=label%></th><td><%=value%></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
     <div class="row">
         <% data.suites.forEach(({name, fastest },index) => { -%>
           <%- include('small-chart.ejs', {title: name, index, fastest}); %>

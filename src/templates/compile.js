@@ -1,7 +1,8 @@
 'use strict';
 const Ejs = require('ejs');
-const data = require('../../reports/report');
 const path = require('path');
+const { toPairs } = require('ramda');
+const data = require('../../reports/report');
 const { push, makeFileWriter, readFile } = require('../utils');
 const writeStr = makeFileWriter(__dirname);
 const templatePath = path.join(__dirname, 'dashboard.ejs');
@@ -11,6 +12,9 @@ const renderIndex = Ejs.compile(readFile(idxTemplatePath), { filename: idxTempla
 const renderCreateBench = require('./create');
 // const PKG = require('../../package');
 
+const { platform: _platform, os } = data;
+
+const platform = toPairs(os);
 
 const makeIndex = (reports) => {
 
@@ -22,7 +26,7 @@ const makeIndex = (reports) => {
 };
 
 const reports = data.files.reduce(
-    (reports, data) => push(reports, { markup: renderDashboard({ data }), name: path.basename(data.name).replace(/\.\w+$/, '') })
+    (reports, data) => push(reports, { markup: renderDashboard({ data, platform }), name: path.basename(data.name).replace(/\.\w+$/, '') })
     , [])
     .map(({ name, markup }) => {
 
