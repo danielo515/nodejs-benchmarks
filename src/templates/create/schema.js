@@ -19,10 +19,10 @@ const makeSchema = (schema, offset = 0) =>
         );
 
 const basicSchema = (name, opts) => assign
-    (
+(
     { title: startCase(name) },
     opts
-    );
+);
 
 const stringSchema = (name, opts = {}) => assign(
     basicSchema(name, opts),
@@ -76,7 +76,7 @@ const dependencySchema = arraySchema('dependencies',
         properties: {
             name: enumSchema('name', Object.keys(dependencies), { propertyOrder: 1 }),
             alias: stringSchema('alias', { propertyOrder: 2 }),
-            destructuring: arrayStringSchema('destructuring', { uniqueItems: true, i: 3, format: 'table' })
+            destructuring: arrayStringSchema('destructuring', { uniqueItems: true, i: 3})
         }
     },
     { format: 'table' });
@@ -85,6 +85,7 @@ baseSchema.properties = assign(
     {},
     {
         dependencies: dependencySchema,
+        preTest: stringSchema('pre-test',{format:'javascript'}),
         suites: suiteSchema
     }
 );

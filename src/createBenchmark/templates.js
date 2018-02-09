@@ -8,8 +8,9 @@ const formatDeps = (dep) => typeof dep === 'string'
         varName: (dep.destructuring || []).length ? `{ ${dep.destructuring.join(', ')} }` : dep.alias || camelCase(dep.name)
     };
 
-const makeMain = ({ body, dependencies = [] }) => `'use strict';
+const makeMain = ({ body, preTest = '', dependencies = [] }) => `'use strict';
 ${dependencies.map(formatDeps).map(makeRequire).join('')}
+${preTest}
 module.exports = (suite, benchmark) => {
     ${body}
 };`;

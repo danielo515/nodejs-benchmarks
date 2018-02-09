@@ -11,7 +11,7 @@ module.exports = (definition) => {
     definition.body = definition.suites.map(({ title, benchmarks: benches }) => {
 
         const benchmarks = benches.map(makeBenchmark).join('');
-        return makeSuite({ title, body: benchmarks })
+        return makeSuite({ title, body: benchmarks });
     }).join('');
 
     const { fixed, messages, output } = linter.verifyAndFix(
