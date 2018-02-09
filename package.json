@@ -30,7 +30,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "benchr": "^4.0.0",
+    "benchr": "^4.2.0",
     "boom": "^7.1.1",
     "ejs": "^2.5.7",
     "faker": "^4.1.0",
