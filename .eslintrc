@@ -4,9 +4,8 @@
         "commonjs": true,
         "node": true
     },
-    "ecmaFeatures": {
-        "modules": true,
-        "experimentalObjectRestSpread": false
+    "parserOptions": {
+        "ecmaVersion": 2017
     },
     "rules": {
         "no-unused-vars": "error",

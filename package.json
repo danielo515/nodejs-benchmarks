@@ -30,6 +30,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@octokit/rest": "^14.0.9",
     "benchr": "^4.2.0",
     "boom": "^7.1.1",
     "ejs": "^2.5.7",

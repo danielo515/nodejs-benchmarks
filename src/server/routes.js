@@ -1,8 +1,9 @@
 'use strict';
-const Joi = require('joi');
 const renderCreateBenchmark = require('../templates/create');
 const createBenchMarkSrc = require('../createBenchmark');
 const payload = require('./benchmarkSchema');
+const { createFile } = require('./github');
+const { constant } = require('lodash');
 
 const register = async (server, options) => {
 
@@ -26,13 +27,19 @@ const register = async (server, options) => {
                     }
                 }
             },
-            handler: function (request, h) {
+            handler: function ({ payload }, h) {
 
-                const src = createBenchMarkSrc(request.payload);
-                console.log(src);
-                return { src }
+                const { title } = payload;
+                const src = createBenchMarkSrc(payload);
+                return createFile({ content: src, name: title })
+                    .then(constant({ src }))
+                    .catch(err => {
+                        console.error('Failed creating the file', err);
+                        throw err;
+                    });
             }
-        }];
+        }
+    ];
 
     // routes.map(r => server.route(r));
     server.route(routes);

@@ -3,7 +3,7 @@ const Ejs = require('ejs');
 const Os = require('os');
 const path = require('path');
 const { toPairs, nth, identity } = require('ramda');
-const { capitalize } = require('lodash');       
+const { capitalize } = require('lodash');
 const data = require('../../reports/report');
 const { push, makeFileWriter, readFile } = require('../utils');
 const writeStr = makeFileWriter(__dirname);
@@ -14,17 +14,18 @@ const renderIndex = Ejs.compile(readFile(idxTemplatePath), { filename: idxTempla
 const renderCreateBench = require('./create');
 // const PKG = require('../../package');
 
-const combineTuple = (fna,fnb) => ([a,b]) => [fna(a),fnb(b)]
-const capitalizeTuple = combineTuple(capitalize,identity);
+const combineTuple = (fna, fnb) => ([a, b]) => [fna(a), fnb(b)];
+const capitalizeTuple = combineTuple(capitalize, identity);
 
 const { platform: _platform, platform: { os } } = data;
 delete _platform.os;
-Object.assign(_platform, 
+Object.assign(_platform,
     {
-    cpu: Os.cpus()[0].model,
-    'n. of cpus': Os.cpus().length,
-    memory: (Os.totalmem() / 1000000000).toFixed(2) + ' GB'
-    }, 
+        cpu: Os.cpus()[0].model,
+        'n. of cpus': Os.cpus().length,
+        memory: (Os.totalmem() / 1000000000).toFixed(2) + ' GB',
+        timestamp: data.ended
+    },
     os);
 const platform = toPairs(_platform).filter(nth(1)).map(capitalizeTuple);
 
