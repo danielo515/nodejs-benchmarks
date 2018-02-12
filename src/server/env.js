@@ -7,4 +7,6 @@ const {
     GITHUB_TOKEN
     } = process.env;
 
-module.exports = { REPO, GITHUB_TOKEN, BENCHMARKS_PATH, REPO_OWNER };
+const PORT = parseInt(process.env.PORT) || 30000;
+
+module.exports = { REPO, GITHUB_TOKEN, BENCHMARKS_PATH, REPO_OWNER, PORT };
