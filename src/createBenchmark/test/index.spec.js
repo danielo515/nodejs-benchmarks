@@ -18,7 +18,7 @@ describe('Full file creation', () => {
 
     it('Create a simple file with one set of benchmarks and one suite', async () => {
 
-        const description = { title: 'test file', suites: [{ title: 'My first test suite', benchmarks: [{ title: 'Testing the console', body: 'console.log("anus");' }] }] }
+        const description = { title: 'test file', suites: [{ title: 'My first test suite', benchmarks: [{ title: 'Testing the console', body: 'console.log("anus");' }] }] };
         const benchFileText = makeBenchFile(description);
         const expected = await readFile(Join(__dirname, './expectedFile'), 'utf8');
         expect(benchFileText).to.equal(expected);
@@ -29,7 +29,7 @@ describe('Full file creation', () => {
         const code = `const sum = (x, y) => x + y;
         const result = [1, 2, 3, 4, 5].reduce(sum);
         console.log(result);`;
-        const description = { title: 'test file', suites: [{ title: 'My second test suite', benchmarks: [{ title: 'Testing basic math', body: code }] }] }
+        const description = { title: 'test file', suites: [{ title: 'My second test suite', benchmarks: [{ title: 'Testing basic math', body: code }] }] };
         const benchFileText = makeBenchFile(description);
         const expected = await readFile(Join(__dirname, './expectedFileComplex'), 'utf8');
         expect(benchFileText).to.equal(expected);
@@ -144,7 +144,7 @@ describe('Full file creation', () => {
                     ]
                 }
             ]
-        }
+        };
         const benchFileText = makeBenchFile(description);
         const expected = await readFile(Join(__dirname, './expectedFileLong'), 'utf8');
         // await writeFile('testFour', benchFileText, 'utf8');

@@ -14,7 +14,7 @@ We provide several scripts that improves the experience of the user interacting 
 You can run any of them by just doing `npm run scriptname` where `scriptname` is one of the list below:
 
 * `start-all`: Executes all the benchmarks contained on the benchmarks directory
-* `start`: Brings a wizard that allows you to select a group of benchmarks to run
+* `start-bench`: Brings a wizard that allows you to select a group of benchmarks to run
 
 ## Creating benchmarks
 

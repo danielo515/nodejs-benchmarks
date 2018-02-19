@@ -5,7 +5,7 @@ const {
     REPO_OWNER = 'danielo515',
     BENCHMARKS_PATH = 'src/benchmarks',
     GITHUB_TOKEN
-    } = process.env;
+} = process.env;
 
 const PORT = parseInt(process.env.PORT) || 30000;
 

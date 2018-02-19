@@ -6,7 +6,7 @@ const { writeObj } = require('./utils');
 const makePath = (...args) => Join(__dirname, ...args);
 const inquirer = require('inquirer');
 const { map } = require('lodash/fp');
-const Runner = require('benchr')
+const Runner = require('benchr');
 
 const askForBenchmark = (files) => {
 
@@ -26,8 +26,8 @@ const askForBenchmark = (files) => {
             choices: ['json', 'console'],
             validate: answers => !!answers.length || 'You must select at least one benchmark'
         }
-    ])
-}
+    ]);
+};
 
 const benchmarksDir = Join(__dirname, './benchmarks');
 

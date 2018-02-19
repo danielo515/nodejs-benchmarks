@@ -16,11 +16,11 @@ describe('Basic template sections', () => {
         const expected = `benchmark(\`This benchmark is supa\`, () => {
 
     console.log('duuude')
-});`
+});`;
 
         const benchmark = makeBenchmark({
             title: 'This benchmark is supa', body: `console.log('duuude')`
-        })
+        });
         expect(benchmark.trim()).to.equal(expected);
     });
-})
+});

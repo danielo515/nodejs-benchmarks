@@ -19,10 +19,10 @@ const makeSchema = (schema, offset = 0) =>
         );
 
 const basicSchema = (name, opts) => assign
-    (
+(
     { title: startCase(name) },
     opts
-    );
+);
 
 const stringSchema = (name, opts = {}) => assign(
     basicSchema(name, opts),

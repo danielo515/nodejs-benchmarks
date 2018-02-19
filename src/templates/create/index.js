@@ -9,4 +9,4 @@ const schema = JSON.stringify(require('./schema'));
 
 
 
-module.exports = (data = {}) => renderCreateBench(Object.assign({ schema }, data))
+module.exports = (data = {}) => renderCreateBench(Object.assign({ schema }, data));

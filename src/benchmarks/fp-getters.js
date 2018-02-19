@@ -20,7 +20,7 @@ const makeUser = () => ({
 const sets = makeSet(makeUser);
 
 const getName = fpGet('name');
-const makeGet = (prop) => (o)=> o[prop]
+const makeGet = (prop) => (o)=> o[prop];
 const arrowGetName = makeGet('name');
 
 module.exports = (suite, benchmark) => {
