@@ -19,10 +19,10 @@ const makeSchema = (schema, offset = 0) =>
         );
 
 const basicSchema = (name, opts) => assign
-(
+    (
     { title: startCase(name) },
     opts
-);
+    );
 
 const stringSchema = (name, opts = {}) => assign(
     basicSchema(name, opts),
@@ -84,7 +84,9 @@ const dependencySchema = arraySchema('dependencies',
 baseSchema.properties = assign(
     {},
     {
-        title: stringSchema('name'),
+        email: stringSchema('your email', { format: 'email', description: 'If you want to get attribution for this' }),
+        name: stringSchema('your name'),
+        title: stringSchema('benchmark name'),
         description: stringSchema('what is this about'),
         dependencies: dependencySchema,
         preTest: stringSchema('pre-test', { format: 'javascript' }),

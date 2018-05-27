@@ -64,7 +64,7 @@
     }
   },
   "engines": {
-    "node": "8.9.x"
+    "node": ">8.9.0"
   },
   "repository": {
     "url": "git@github.com:danielo515/nodejs-benchmarks.git",
