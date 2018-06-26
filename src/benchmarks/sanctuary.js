@@ -1,0 +1,49 @@
+'use strict';
+
+const { create, env } = require('sanctuary');
+const makeSet = require('../makeSet');
+const { makeUser } = require('../fake-data');
+
+const sets = makeSet(makeUser);
+
+const S = create({ checkTypes: false, env }); // Normal sanctuary
+const SS = create({ checkTypes: true, env }); // Safe sanctuary
+
+
+const getName = S.prop('name');
+const sGetName = SS.prop('name');
+
+const getAvatar = S.props(['profile', 'avatar']);
+const sGetAvatar = SS.props(['profile', 'avatar']);
+
+module.exports = (suite, benchmark) => {
+
+    const propGetBench = (set) => () => {
+
+        benchmark('Type safe get-name', () => {
+
+            SS.map(sGetName)(set);
+        });
+        benchmark('Normal get-name', () => {
+
+            S.map(getName)(set);
+        });
+    };
+
+    const deepGetBench = (set) => () => {
+
+        benchmark('Deep type safe prop get', () => {
+
+            SS.map(sGetAvatar)(set);
+        });
+        benchmark('Deep NON-type safe prop get', () => {
+
+            S.map(getAvatar)(set);
+        });
+    };
+
+    suite(`S.map Big array of users (${sets.bigSet.length}): Plain get`, propGetBench(sets.bigSet));
+    suite(`S.map medium array of users (${sets.smallSet.length}): Plain get`, propGetBench(sets.smallSet));
+    suite(`S.map Big array of users (${sets.bigSet.length}): Deep get`, deepGetBench(sets.bigSet));
+    suite(`S.map medium array of users (${sets.smallSet.length}): Deep get`, deepGetBench(sets.smallSet));
+};

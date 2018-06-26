@@ -44,6 +44,7 @@
     "microtime": "^2.1.7",
     "ramda": "^0.25.0",
     "recursive-readdir": "^2.2.1",
+    "sanctuary": "^0.15.0",
     "transducers-js": "^0.4.174"
   },
   "devDependencies": {
