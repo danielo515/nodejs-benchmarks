@@ -3,6 +3,7 @@ const { get } = require('lodash');
 const { get: fpGet } = require('lodash/fp');
 const { users } = require('../fake-data');
 const { prop } = require('ramda');
+const S = require('sanctuary');
 const L = require('partial.lenses');
 
 const sets = users();
@@ -11,6 +12,7 @@ const getName = fpGet('name');
 const makeGet = (prop) => (o) => o[prop];
 const arrowGetName = makeGet('name');
 const RgetName = prop('name');
+const SgetName = S.prop('name');
 const LgetName = L.get(L.prop('name'));
 
 module.exports = (suite, benchmark) => {
@@ -25,19 +27,23 @@ module.exports = (suite, benchmark) => {
 
             set.map(RgetName);
         });
+        benchmark('Sanctuary prop', () => {
+
+            set.map(SgetName);
+        });
         benchmark('Partial lenses', () => {
 
             set.map(LgetName);
         });
-        benchmark('Compiled arrow function get', () => {
-
-            set.map(arrowGetName);
-        });
-        benchmark('Normal lodash get', () => {
+        benchmark('Inline lodash get', () => {
 
             set.map((usr) => get(usr, 'name'));
         });
-        benchmark('Inline function', () => {
+        benchmark('Declared arrow function', () => {
+
+            set.map(arrowGetName);
+        });
+        benchmark('Inline arrow function', () => {
 
             set.map((usr) => usr.name);
         });
@@ -48,5 +54,5 @@ module.exports = (suite, benchmark) => {
     };
 
     suite(`Get name prop at root (${sets.bigSet.length} users)`, makeBenchmarks(sets.bigSet));
-    suite(`Get name prop at root ((${sets.smallSet.length} users)`, makeBenchmarks(sets.smallSet));
+    suite(`Get name prop at root (${sets.smallSet.length} users)`, makeBenchmarks(sets.smallSet));
 };
