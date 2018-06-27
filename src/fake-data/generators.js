@@ -1,6 +1,7 @@
 'use strict';
 
 const Faker = require('faker');
+const { random } = require('lodash');
 
 const makeUser = () => ({
     name: Faker.name.firstName(),
@@ -12,6 +13,12 @@ const makeUser = () => ({
     meta: {
         column: Faker.database.column(),
         type: Faker.database.type()
+    },
+    bio: {
+        birthday: {
+            year: random(1900, 2018),
+            day: random(1, 31)
+        }
     }
 });
 
