@@ -42,7 +42,7 @@ module.exports = (suite, benchmark) => {
     };
 
     // // suite(`S.map Medium array of users (${sets.mediumSet.length}): Plain get`, propGetBench(sets.mediumSet));
-    suite(`S.map medium array of users (${sets.smallSet.length}): Plain get`, propGetBench(sets.smallSet));
+    suite(`S.map medium array of users (${sets.xSmallSet.length}): Plain get`, propGetBench(sets.xSmallSet));
     // // suite(`S.map Medium array of users (${sets.mediumSet.length}): Deep get`, deepGetBench(sets.mediumSet));
-    suite(`S.map medium array of users (${sets.smallSet.length}): Deep get`, deepGetBench(sets.smallSet));
+    suite(`S.map medium array of users (${sets.xSmallSet.length}): Deep get`, deepGetBench(sets.xSmallSet));
 };
