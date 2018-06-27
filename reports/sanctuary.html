@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <!-- Demo Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <title>src/benchmarks/sanctuary.js</title>
+  <script>
+    var rawData = {"name":"src/benchmarks/sanctuary.js","suites":[{"name":"S.map medium array of users (500): Plain get","benchmarks":[{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Type safe get-name"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Type safe get-name","events":{"complete":[null],"start":[null]},"id":27,"stats":{"moe":0.20487386377986033,"rme":15.163067345228686,"sem":0.07968645032277726,"deviation":0.19519114270444413,"mean":1.3511373333333332,"sample":[1.113322,1.233449,1.422854,1.596312,1.205987,1.5349],"variance":0.03809958219026667},"times":{"cycle":1.3511373333333332,"elapsed":16.756,"period":1.3511373333333332,"timeStamp":1530122161431},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":157200,"_repeat":null,"_destroyed":false},"running":false,"count":1,"cycles":1,"hz":0.7401172148303702},{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Normal get-name"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Normal get-name","events":{"complete":[null],"start":[null]},"id":28,"stats":{"moe":0.0000091090910480951,"rme":6.833151819334639,"sem":0.000004647495432701582,"deviation":0.00003569808978113453,"mean":0.0001333073124809054,"sample":[0.00012362385321100917,0.0001241394422310757,0.00011018924302788845,0.00010986610169491526,0.0001160995260663507,0.00010735387045813587,0.00011935387045813585,0.00010818799368088469,0.00009182622432859399,0.00010617693522906794,0.00008930173775671407,0.00009978357030015797,0.0000891216429699842,0.00011464612954186413,0.00010616745655608215,0.00011904581358609796,0.0001737693522906793,0.00016097946287519749,0.00013673775671406004,0.0001334170616113744,0.00012729225908372828,0.00016227488151658768,0.00015687677725118485,0.0001099699842022117,0.00016815481832543444,0.00018041390205371247,0.00017823380726698264,0.00020398262243285942,0.00013943759873617692,0.0001365134281200632,0.00010896208530805689,0.00010042338072669827,0.00011475039494470773,0.0000978088467614534,0.00010033175355450237,0.0000909605055292259,0.00011975513428120063,0.0001141958925750395,0.00024045971563981046,0.0001974881516587678,0.0002255481832543444,0.00015501421800947866,0.00013583570300157978,0.00012067614533965244,0.00009449447077409163,0.00012213112164297,0.00018197314375987362,0.00019177567140600315,0.000175129541864139,0.0001824992101105845,0.00011948183254344392,0.00011442812006319114,0.00014231595576619273,0.00010174881516587679,0.00015170774091627172,0.00009530489731437598,0.00013871090047393365,0.0001143127962085308,0.00011396998420221169],"variance":1.2743536140219416e-9},"times":{"cycle":0.08438352880041312,"elapsed":5.726,"period":0.0001333073124809054,"timeStamp":1530122178189},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":173957,"_repeat":null,"_destroyed":false},"running":false,"count":633,"cycles":3,"hz":7501.463958649962}],"fastest":["Normal get-name"]},{"name":"S.map medium array of users (500): Deep get","benchmarks":[{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Deep type safe prop get"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Deep type safe prop get","events":{"complete":[null],"start":[null]},"id":29,"stats":{"moe":0.09250348172760582,"rme":7.900481979504917,"sem":0.037802812312057954,"deviation":0.10001684023655598,"mean":1.1708587142857143,"sample":[1.151012,1.284843,1.189375,1.047472,1.318033,1.109651,1.095625],"variance":0.010003368330904762},"times":{"cycle":1.1708587142857143,"elapsed":16.796,"period":1.1708587142857143,"timeStamp":1530122183917},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":179685,"_repeat":null,"_destroyed":false},"running":false,"count":1,"cycles":1,"hz":0.8540740123457619},{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Deep NON-type safe prop get"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Deep NON-type safe prop get","events":{"complete":[null],"start":[null]},"id":30,"stats":{"moe":0.000013473761749061191,"rme":6.088040525476397,"sem":0.000006874368239316935,"deviation":0.00005412882964523825,"mean":0.00022131524408679676,"sample":[0.0002635263157894737,0.000165375,0.00017092434210526315,0.0001714111842105263,0.00022669078947368422,0.00017436184210526315,0.0001859638157894737,0.00018361513157894737,0.00020582739726027397,0.00020172328767123287,0.0001686082191780822,0.00015085479452054795,0.00016312328767123288,0.00016418356164383562,0.000283013698630137,0.00030374520547945204,0.00030358082191780825,0.0002979780821917808,0.00034111780821917805,0.00022383287671232875,0.00022625479452054796,0.00020552328767123288,0.0002466027397260274,0.00017099726027397258,0.00019954520547945203,0.0001917972602739726,0.00020770684931506852,0.0002847945205479452,0.0002255945205479452,0.0001863945205479452,0.000154786301369863,0.00014525479452054795,0.0001478027397260274,0.00016666575342465752,0.0001664301369863014,0.0001598876712328767,0.00026163013698630137,0.00018824383561643837,0.00023102191780821916,0.00018846575342465753,0.00021410136986301369,0.00018535342465753426,0.00019175890410958905,0.000175013698630137,0.0002517095890410959,0.00020821643835616438,0.0001496,0.00018283561643835618,0.0001849917808219178,0.000269213698630137,0.00027704657534246576,0.00022694246575342468,0.00029324383561643835,0.000275641095890411,0.00032836164383561644,0.000326841095890411,0.00026405479452054793,0.0002888849315068493,0.0002740904109589041,0.00031469589041095887,0.00027421369863013696,0.00025987671232876713],"variance":2.9299301987632232e-9},"times":{"cycle":0.08078006409168081,"elapsed":5.516,"period":0.00022131524408679676,"timeStamp":1530122200714},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":196483,"_repeat":null,"_destroyed":false},"running":false,"count":365,"cycles":3,"hz":4518.441574715088}],"fastest":["Deep NON-type safe prop get"]}]};
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.min.js"></script>
+
+  <!-- Dashboard -->
+  <style>
+      .keen-dashboard {
+    background: #f2f2f2;
+    font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .keen-dataviz {
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+  .keen-dataviz-title {
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 2px 2px 0 0;
+    font-size: 13px;
+    padding: 2px 10px 0;
+    text-transform: uppercase;
+  }
+  .keen-dataviz-stage {
+    padding: 10px;
+  }
+  
+  .keen-dataviz-notes {
+    background: #fbfbfb;
+    border-radius: 0 0 2px 2px;
+    border-top: 1px solid #e7e7e7;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  
+  .keen-dataviz .keen-dataviz-metric {
+    border-radius: 2px;
+  }
+  
+  .keen-dataviz .keen-spinner-indicator {
+    border-top-color: rgba(0, 187, 222, .4);
+  }
+  
+  .keen-dashboard .chart-wrapper {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .keen-dashboard .chart-wrapper .chart-title {
+    border-bottom: 1px solid #d7d7d7;
+    color: #666;
+    font-size: 14px;
+    font-weight: 200;
+    padding: 7px 10px 4px;
+  }
+  
+  .keen-dashboard .chart-wrapper .chart-stage {
+    overflow: hidden;
+    padding: 5px 10px;
+    position: relative;
+  }
+  
+  .keen-dashboard .chart-wrapper .chart-notes {
+    background: #fbfbfb;
+    border-top: 1px solid #e2e2e2;
+    color: #808080;
+    font-size: 12px;
+    padding: 8px 10px 5px;
+  }
+  
+  .keen-dashboard .chart-wrapper .keen-dataviz,
+  .keen-dashboard .chart-wrapper .keen-dataviz-title,
+  .keen-dashboard .chart-stage .chart-title {
+    border: medium none;
+  }
+  </style>
+</head>
+<body class="keen-dashboard" style="padding-top: 80px;">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="https://github.com/danielo515/nodejs-benchmarks">Source</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <table class="table table-bordered table-striped text-center">
+            <thead>
+                <th colspan="2" class="text-center">Platform</th>
+              </thead>
+            <tbody>
+                            <tr>
+                <th>Description</th><td>Node.js 8.11.2 on Linux 64-bit</td>
+              </tr>
+                            <tr>
+                <th>Name</th><td>Node.js</td>
+              </tr>
+                            <tr>
+                <th>Cpu</th><td>Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz</td>
+              </tr>
+                            <tr>
+                <th>N. of cpus</th><td>4</td>
+              </tr>
+                            <tr>
+                <th>Memory</th><td>17.06 GB</td>
+              </tr>
+                            <tr>
+                <th>Timestamp</th><td>2018-06-27T17:59:45.779Z</td>
+              </tr>
+                            <tr>
+                <th>Architecture</th><td>64</td>
+              </tr>
+                            <tr>
+                <th>Family</th><td>Linux</td>
+              </tr>
+              
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="row">
+                      <div class="col-sm-6">
+        <div class="chart-wrapper">       
+          <div class="chart-title">
+            S.map medium array of users (500): Plain get
+          </div>
+          <div class="chart-stage">
+              <div id="chart-0"></div>            
+          </div>
+          <div class="chart-notes">
+            Fastest is: Normal get-name
+          </div>
+        </div>
+      </div>
+                      <div class="col-sm-6">
+        <div class="chart-wrapper">       
+          <div class="chart-title">
+            S.map medium array of users (500): Deep get
+          </div>
+          <div class="chart-stage">
+              <div id="chart-1"></div>            
+          </div>
+          <div class="chart-notes">
+            Fastest is: Deep NON-type safe prop get
+          </div>
+        </div>
+      </div>
+        
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            All suites at scale
+          </div>
+          <div class="chart-stage">
+            <div id="chart"></div>
+          </div>
+          <div class="chart-notes">
+            Here you can see the results of all suites at once
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container-fluid">
+    <p class="small text-muted">Built with &#9829; by <a href="https://keen.github.io/dashboards/">Keen IO</a></p>
+  </div>
+
+  <script>
+    'use strict';
+
+const makeJson = (suites) => suites.map(({ name, benchmarks }) => 
+
+    benchmarks.reduce((set,{name,hz})=> Object.assign(set,{[name]:hz}),{name})
+);
+
+const JsonData = makeJson(rawData.suites);
+
+const charts = JsonData.map((data,i) => { 
+    c3.generate({
+        bindto: '#chart-' + i,
+        data: {
+            json: [data],
+            type: 'bar',
+            keys: {
+                x: 'name',
+                value: Object.keys(data).slice(1)
+            },
+        },
+        axis: {
+            x: {
+                type: 'category'
+            }
+        }
+    });
+});
+
+
+c3.generate({
+    bindto: '#chart',
+    data: {
+        json: JsonData,
+        type: 'bar',
+        keys: {
+            x: 'name',
+            value: Object.keys(JsonData[0]).slice(1)
+        },
+    },
+    axis: {
+        x: {
+            type: 'category'
+        }
+    }
+});
+  </script>
+      
+
+</body>
+</html>
