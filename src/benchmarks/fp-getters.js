@@ -3,6 +3,7 @@ const { get } = require('lodash');
 const { get: fpGet } = require('lodash/fp');
 const { users } = require('../fake-data');
 const { prop, props } = require('ramda');
+const R = require('ramda');
 const S = require('sanctuary');
 const L = require('partial.lenses');
 
@@ -14,6 +15,7 @@ const arrowGetName = makeGet('name');
 const RgetName = prop('name');
 const SgetName = S.prop('name');
 const LgetName = L.get(L.prop('name'));
+const RamdaLensName = R.view(R.lensPath(['name']));
 
 module.exports = (suite, benchmark) => {
 
@@ -26,6 +28,7 @@ module.exports = (suite, benchmark) => {
             ['Ramda prop', RgetName],
             ['Sanctuary prop', SgetName],
             ['Partial lenses', LgetName],
+            ['Ramda lens', RamdaLensName],
             ['Inline lodash get', (usr) => get(usr, 'name')],
             ['Declared arrow function', arrowGetName],
             ['Inline arrow function', (usr) => usr.name],
@@ -45,6 +48,7 @@ module.exports = (suite, benchmark) => {
             L.prop('birthday'),
             L.prop('year')
         ));
+        const RamdaLensBirthYear = R.view(R.lensPath(['bio', 'birthday', 'year']));
 
         const arrowGetBirthYear = it => ((it.bio || {}).birthday || {}).year;
 
@@ -53,6 +57,7 @@ module.exports = (suite, benchmark) => {
             ['Ramda props', RgetBirthYear],
             ['Sanctuary props', SgetBirthYear],
             ['Partial lenses', LgetBirthYear],
+            ['Ramda lenses', RamdaLensBirthYear],
             ['Inline lodash get', (usr) => get(usr, ['bio', 'birthday', 'year'])],
             ['Declared arrow function', arrowGetBirthYear],
             ['Inline arrow function', it => ((it.bio || {}).birthday || {}).year],
