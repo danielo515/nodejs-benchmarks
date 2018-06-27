@@ -21,8 +21,6 @@ module.exports = (suite, benchmark) => {
 
     const nameAtRootBenchmark = (set) => () => {
 
-        console.info('Setting up benchmark');
-
         [
             ['Compiled lodash/FP get', getName],
             ['Ramda prop', RgetName],
@@ -34,7 +32,7 @@ module.exports = (suite, benchmark) => {
             ['Inline arrow function', (usr) => usr.name],
             ['Inline destructuring', ({ name }) => name]
         ].map(
-            ([description, fn]) => (console.log(description), benchmark(description, () => set.map(fn)))
+            ([description, fn]) => benchmark(description, () => set.map(fn))
         );
     };
 
