@@ -1,31 +1,17 @@
 'use strict';
 const { get } = require('lodash');
-const { get:fpGet } = require('lodash/fp');
-const Faker = require('faker');
-const makeSet = require('../makeSet');
+const { get: fpGet } = require('lodash/fp');
+const { users } = require('../fake-data');
 
-const makeUser = () => ({ 
-    name: Faker.name.firstName(),
-    phone: Faker.phone.phoneNumber(),
-    profile: {
-        email: Faker.internet.email(),
-        avatar: Faker.internet.avatar()
-    },
-    meta: {
-        column: Faker.database.column(),
-        type: Faker.database.type()
-    }
-});
-
-const sets = makeSet(makeUser);
+const sets = users();
 
 const getName = fpGet('name');
-const makeGet = (prop) => (o)=> o[prop];
+const makeGet = (prop) => (o) => o[prop];
 const arrowGetName = makeGet('name');
 
 module.exports = (suite, benchmark) => {
 
-    const makeBenchmarks = (set) => () => { 
+    const makeBenchmarks = (set) => () => {
 
         benchmark('Compiled lodash/FP get', () => {
 
@@ -37,15 +23,15 @@ module.exports = (suite, benchmark) => {
         });
         benchmark('Normal lodash get', () => {
 
-            set.map((usr) => get(usr,'name'));
+            set.map((usr) => get(usr, 'name'));
         });
         benchmark('Inline function', () => {
 
-            set.map((usr)=> usr.name);
+            set.map((usr) => usr.name);
         });
         benchmark('Inline destructuring', () => {
 
-            set.map(({name}) => name);
+            set.map(({ name }) => name);
         });
     };
 

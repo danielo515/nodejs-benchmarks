@@ -1,6 +1,6 @@
 'use strict';
 const recursive = require('recursive-readdir');
-const Join = require('path').join;
+const { join: Join, basename } = require('path');
 const fs = require('fs');
 const { writeObj } = require('./utils');
 const makePath = (...args) => Join(__dirname, ...args);
@@ -15,7 +15,11 @@ const askForBenchmark = (files) => {
             type: 'checkbox',
             name: 'toRun',
             message: 'Select which benchmarks you want to run',
-            choices: files,
+            choices: files.map(it => ({
+                value: it,
+                name: basename(it)
+            })),
+
             validate: answers => !!answers.length || 'You must select at least one benchmark'
         },
         {
