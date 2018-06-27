@@ -34,8 +34,8 @@ module.exports = (suite, benchmark) => {
             ([description, fn]) => (console.log(description), benchmark(description, () => set.map(fn)))
         );
     };
-    const DeepBio = (set) => () => {
 
+    const DeepBio = (set) => () => {
 
         const RgetBirthYear = props(['bio', 'birthday', 'year']);
         const SgetBirthYear = S.props(['bio', 'birthday', 'year']);
@@ -47,7 +47,6 @@ module.exports = (suite, benchmark) => {
         ));
 
         const arrowGetBirthYear = it => ((it.bio || {}).birthday || {}).year;
-
 
         [
             ['Compiled lodash/FP get', _getBirthYear],
