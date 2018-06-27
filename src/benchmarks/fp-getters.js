@@ -19,38 +19,20 @@ module.exports = (suite, benchmark) => {
 
     const nameAtRootBenchmark = (set) => () => {
 
-        benchmark('Compiled lodash/FP get', () => {
+        console.info('Setting up benchmark');
 
-            set.map(getName);
-        });
-        benchmark('Ramda prop', () => {
-
-            set.map(RgetName);
-        });
-        benchmark('Sanctuary prop', () => {
-
-            set.map(SgetName);
-        });
-        benchmark('Partial lenses', () => {
-
-            set.map(LgetName);
-        });
-        benchmark('Inline lodash get', () => {
-
-            set.map((usr) => get(usr, 'name'));
-        });
-        benchmark('Declared arrow function', () => {
-
-            set.map(arrowGetName);
-        });
-        benchmark('Inline arrow function', () => {
-
-            set.map((usr) => usr.name);
-        });
-        benchmark('Inline destructuring', () => {
-
-            set.map(({ name }) => name);
-        });
+        [
+            ['Compiled lodash/FP get', getName],
+            ['Ramda prop', RgetName],
+            ['Sanctuary prop', SgetName],
+            ['Partial lenses', LgetName],
+            ['Inline lodash get', (usr) => get(usr, 'name')],
+            ['Declared arrow function', arrowGetName],
+            ['Inline arrow function', (usr) => usr.name],
+            ['Inline destructuring', ({ name }) => name]
+        ].map(
+            ([description, fn]) => (console.log(description), benchmark(description, () => set.map(fn)))
+        );
     };
     const DeepBio = (set) => () => {
 
@@ -67,38 +49,18 @@ module.exports = (suite, benchmark) => {
         const arrowGetBirthYear = it => ((it.bio || {}).birthday || {}).year;
 
 
-        benchmark('Compiled lodash/FP get', () => {
-
-            set.map(_getBirthYear);
-        });
-        benchmark('Ramda props', () => {
-
-            set.map(RgetBirthYear);
-        });
-        benchmark('Sanctuary props', () => {
-
-            set.map(SgetBirthYear);
-        });
-        benchmark('Partial lenses', () => {
-
-            set.map(LgetBirthYear);
-        });
-        benchmark('Inline lodash get', () => {
-
-            set.map((usr) => get(usr, ['bio', 'birthday', 'year']));
-        });
-        benchmark('Declared arrow function', () => {
-
-            set.map(arrowGetBirthYear);
-        });
-        benchmark('Inline arrow function', () => {
-
-            set.map(it => ((it.bio || {}).birthday || {}).year);
-        });
-        benchmark('Inline destructuring', () => {
-
-            set.map(({ bio: { birthday: { year } = {} } = {} } = {}) => year);
-        });
+        [
+            ['Compiled lodash/FP get', _getBirthYear],
+            ['Ramda props', RgetBirthYear],
+            ['Sanctuary props', SgetBirthYear],
+            ['Partial lenses', LgetBirthYear],
+            ['Inline lodash get', (usr) => get(usr, ['bio', 'birthday', 'year'])],
+            ['Declared arrow function', arrowGetBirthYear],
+            ['Inline arrow function', it => ((it.bio || {}).birthday || {}).year],
+            ['Inline destructuring', ({ bio: { birthday: { year } = {} } = {} } = {}) => year]
+        ].map(
+            ([description, fn]) => benchmark(description, () => set.map(fn))
+        );
     };
 
     suite(`Get name prop at root (${sets.bigSet.length} users)`, nameAtRootBenchmark(sets.bigSet));
