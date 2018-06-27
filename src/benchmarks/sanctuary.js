@@ -42,8 +42,8 @@ module.exports = (suite, benchmark) => {
         });
     };
 
-    suite(`S.map Big array of users (${sets.bigSet.length}): Plain get`, propGetBench(sets.bigSet));
+    // // suite(`S.map Medium array of users (${sets.mediumSet.length}): Plain get`, propGetBench(sets.mediumSet));
     suite(`S.map medium array of users (${sets.smallSet.length}): Plain get`, propGetBench(sets.smallSet));
-    suite(`S.map Big array of users (${sets.bigSet.length}): Deep get`, deepGetBench(sets.bigSet));
+    // // suite(`S.map Medium array of users (${sets.mediumSet.length}): Deep get`, deepGetBench(sets.mediumSet));
     suite(`S.map medium array of users (${sets.smallSet.length}): Deep get`, deepGetBench(sets.smallSet));
 };
