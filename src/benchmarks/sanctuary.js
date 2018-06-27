@@ -1,10 +1,9 @@
 'use strict';
 
 const { create, env } = require('sanctuary');
-const makeSet = require('../makeSet');
-const { makeUser } = require('../fake-data');
+const { users } = require('../fake-data');
 
-const sets = makeSet(makeUser);
+const sets = users();
 
 const S = create({ checkTypes: false, env }); // Normal sanctuary
 const SS = create({ checkTypes: true, env }); // Safe sanctuary
