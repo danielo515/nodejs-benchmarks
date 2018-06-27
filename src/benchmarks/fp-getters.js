@@ -64,6 +64,7 @@ module.exports = (suite, benchmark) => {
             L.prop('year')
         ));
 
+        const arrowGetBirthYear = it => ((it.bio || {}).birthday || {}).year;
 
 
         benchmark('Compiled lodash/FP get', () => {
@@ -86,18 +87,18 @@ module.exports = (suite, benchmark) => {
 
             set.map((usr) => get(usr, ['bio', 'birthday', 'year']));
         });
-        /* benchmark('Declared arrow function', () => {
-    
-                set.map(arrowGetName);
-            });
-            benchmark('Inline arrow function', () => {
-    
-                set.map((usr) => usr.name);
-            });
-            benchmark('Inline destructuring', () => {
-    
-                set.map(({ name }) => name);
-            }); */
+        benchmark('Declared arrow function', () => {
+
+            set.map(arrowGetBirthYear);
+        });
+        benchmark('Inline arrow function', () => {
+
+            set.map(it => ((it.bio || {}).birthday || {}).year);
+        });
+        benchmark('Inline destructuring', () => {
+
+            set.map(({ bio: { birthday: { year } = {} } = {} } = {}) => year);
+        });
     };
 
     suite(`Get name prop at root (${sets.bigSet.length} users)`, nameAtRootBenchmark(sets.bigSet));
