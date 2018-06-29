@@ -18,7 +18,7 @@
     "profile": "npm run prof -- src/benchmarks/*.js && npm run prof_process",
     "report-compile": "node src/templates/compile.js",
     "report": "npm run report-json && npm run report-compile",
-    "run-all": "benchr -v -R json src/benchmarks/*.js > reports/report.json 2> logs/error.log",
+    "run-all": "benchr -v -R json src/benchmarks/*.js > reports/report.json",
     "start-server": "nodemon --inspect src/server",
     "start-all": "benchr src/benchmarks/*.js",
     "start-bench": "node src/run.js",
