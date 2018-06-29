@@ -4,7 +4,6 @@ const Os = require('os');
 const path = require('path');
 const { toPairs, nth, identity } = require('ramda');
 const { capitalize } = require('lodash');
-const data = require('../../reports/report');
 const { push, makeFileWriter, readFile } = require('../utils');
 const writeStr = makeFileWriter(__dirname);
 const templatePath = path.join(__dirname, 'dashboard.ejs');
@@ -12,6 +11,14 @@ const idxTemplatePath = path.join(__dirname, 'index.ejs');
 const renderDashboard = Ejs.compile(readFile(templatePath), { filename: templatePath });
 const renderIndex = Ejs.compile(readFile(idxTemplatePath), { filename: idxTemplatePath });
 const renderCreateBench = require('./create');
+let data, _data;
+try {
+    _data = readFile(__dirname, '../../reports/report.json');
+    data = JSON.parse(_data);
+} catch (err) {
+    console.error('You throw bad json at me!!!', (_data || 'no data').slice(0, 200));
+    process.exit(1);
+}
 // const PKG = require('../../package');
 
 const combineTuple = (fna, fnb) => ([a, b]) => [fna(a), fnb(b)];

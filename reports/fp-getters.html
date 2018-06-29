@@ -8,9 +8,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <title>/Users/danielo/GIT/benchmarks-js/src/benchmarks/fp-getters.js</title>
+  <title>/mnt/c/Users/rdani/Documents/trabajo/GIT/benchmarks-js/src/benchmarks/fp-getters.js</title>
   <script>
-    var rawData = {"name":"/Users/danielo/GIT/benchmarks-js/src/benchmarks/fp-getters.js","suites":[{"name":"Big array of users (100000)","benchmarks":[{"name":"Compiled lodash/FP get","hz":4.426574200450035,"aborted":false,"stats":{"moe":0.04193641317805712,"rme":18.56346446334005,"sem":0.019550775374385605,"deviation":0.07571982743043752,"mean":0.22590833333333335,"variance":0.0057334922660952385}},{"name":"Compiled arrow function get","hz":15.373250701453836,"aborted":false,"stats":{"moe":0.008077274282299483,"rme":12.417396252619556,"sem":0.0041210583072956546,"deviation":0.025736000880344452,"mean":0.06504805128205128,"variance":0.0006623417413130903}},{"name":"Normal lodash get","hz":11.831315556243926,"aborted":false,"stats":{"moe":0.005089250071524879,"rme":6.0212523540847815,"sem":0.002596556158941265,"deviation":0.01491607952029225,"mean":0.08452145454545452,"variance":0.0002224894282556819}},{"name":"Inline function","hz":17.908336944847957,"aborted":false,"stats":{"moe":0.0010619952453900436,"rme":1.9018568688271387,"sem":0.0005418343088724713,"deviation":0.0032055350005101802,"mean":0.05583991428571427,"variance":0.0000102754546394958}},{"name":"Inline destructuring","hz":17.936254551324595,"aborted":false,"stats":{"moe":0.0010530357937485106,"rme":1.8887518048329432,"sem":0.0005372631600757707,"deviation":0.0032235789604546246,"mean":0.05575299999999999,"variance":0.000010391461314285719}}],"fastest":["Inline destructuring","Inline function"]},{"name":"Medium array of users (5000)","benchmarks":[{"name":"Compiled lodash/FP get","hz":349.5981966527259,"aborted":false,"stats":{"moe":0.00011166871830633198,"rme":3.9039182542414905,"sem":0.00005697383587057754,"deviation":0.0004999433807774418,"mean":0.002860426654298083,"variance":2.499433839831781e-7}},{"name":"Compiled arrow function get","hz":10513.824264052044,"aborted":false,"stats":{"moe":0.000002439456778293877,"rme":2.5648019866732397,"sem":0.000001244620805251978,"deviation":0.000011339035177469237,"mean":0.00009511286995913687,"variance":1.285737187558848e-10}},{"name":"Normal lodash get","hz":2122.6839564787365,"aborted":false,"stats":{"moe":0.00001022961006922006,"rme":2.1714229174966757,"sem":0.000005219188810826561,"deviation":0.00004697269929743905,"mean":0.00047110169036132597,"variance":2.206434479287631e-9}},{"name":"Inline function","hz":10365.31428481728,"aborted":false,"stats":{"moe":0.0000030637843633519442,"rme":3.175708782705172,"sem":0.0000015631552874244614,"deviation":0.000013893628099083443,"mean":0.00009647560821814753,"variance":1.93032901755641e-10}},{"name":"Inline destructuring","hz":10922.740979104794,"aborted":false,"stats":{"moe":0.0000012302419951009575,"rme":1.3437614654104868,"sem":6.276744872964069e-7,"deviation":0.000005752731699656765,"mean":0.00009155211149957691,"variance":3.3093922008235806e-11}}],"fastest":["Inline destructuring","Compiled arrow function get"]}]};
+    var rawData = {"name":"/mnt/c/Users/rdani/Documents/trabajo/GIT/benchmarks-js/src/benchmarks/fp-getters.js","suites":[{"name":"Get name prop at root (100000 users)","benchmarks":[{"name":"Compiled lodash/FP get","hz":17.427923653019548,"aborted":false,"stats":{"moe":0.0033921022455122773,"rme":5.911729895802414,"sem":0.0017306644109756518,"deviation":0.009941910128983468,"mean":0.057379181818181815,"variance":0.00009884157701278408}},{"name":"Ramda prop","hz":19.055925875715076,"aborted":false,"stats":{"moe":0.002648267910194621,"rme":5.046519699570355,"sem":0.0013511570970380718,"deviation":0.007993553185578503,"mean":0.052477114285714284,"variance":0.00006389689253067224}},{"name":"Sanctuary prop","hz":42.42882115249022,"aborted":false,"stats":{"moe":0.0007338865428400485,"rme":3.1137940872379772,"sem":0.00037443190961226967,"deviation":0.0027768613615868545,"mean":0.023568884848484843,"variance":0.000007710959021473999}},{"name":"Partial lenses","hz":40.88825753533299,"aborted":false,"stats":{"moe":0.0006473468344782887,"rme":2.6468884082830844,"sem":0.00033027899718280035,"deviation":0.002404467393612157,"mean":0.02445689937106918,"variance":0.00000578146344694404}},{"name":"Inline lodash get","hz":32.59617957614355,"aborted":false,"stats":{"moe":0.002463087584484019,"rme":8.028724521561072,"sem":0.0012566773390224586,"deviation":0.008240584395523196,"mean":0.03067844186046511,"variance":0.00006790723117974039}},{"name":"Declared arrow function","hz":46.964501620536225,"aborted":false,"stats":{"moe":0.0007473620442820152,"rme":3.5099485939809973,"sem":0.00038130716545000775,"deviation":0.0029535926031548725,"mean":0.021292677777777776,"variance":0.000008723709265411176}},{"name":"Inline arrow function","hz":47.265778052820416,"aborted":false,"stats":{"moe":0.00047082717298224604,"rme":2.2254012659415725,"sem":0.00024021794539910512,"deviation":0.001876162130200323,"mean":0.021156956284153004,"variance":0.0000035199843387978135}},{"name":"Inline destructuring","hz":44.623451162325495,"aborted":false,"stats":{"moe":0.0007282352762398647,"rme":3.2496371283972216,"sem":0.0003715486103264616,"deviation":0.0028296299140453756,"mean":0.022409741379310347,"variance":0.00000800680545046044}}],"fastest":["Inline arrow function"]},{"name":"Get name prop at root (5000 users)","benchmarks":[{"name":"Compiled lodash/FP get","hz":473.2446992704393,"aborted":false,"stats":{"moe":0.0001435931518669123,"rme":6.7954697972551426,"sem":0.00007326181217699607,"deviation":0.0006129522971993999,"mean":0.002113071739718615,"variance":3.7571051864202153e-7}},{"name":"Ramda prop","hz":632.9096466722704,"aborted":false,"stats":{"moe":0.00010223009236783627,"rme":6.4702411639800825,"sem":0.0000521582103917532,"deviation":0.00044563994493619906,"mean":0.0015800043580593648,"variance":1.9859496052273855e-7}},{"name":"Sanctuary prop","hz":6635.076587360563,"aborted":false,"stats":{"moe":0.000005335578808219364,"rme":3.5401974030433485,"sem":0.0000027222340858262064,"deviation":0.000024949687515375005,"mean":0.0001507141608440424,"variance":6.224869071148594e-10}},{"name":"Partial lenses","hz":12284.58840646518,"aborted":false,"stats":{"moe":0.0000020684688998903046,"rme":2.541028906672622,"sem":0.000001055341275454237,"deviation":0.000009672362557560566,"mean":0.00008140280869920853,"variance":9.355459744489957e-11}},{"name":"Inline lodash get","hz":2525.6608835264933,"aborted":false,"stats":{"moe":0.000010058257858508693,"rme":2.5403748429658357,"sem":0.000005131764213524843,"deviation":0.00004786591003062242,"mean":0.00039593597324266846,"variance":2.2911453430596404e-9}},{"name":"Declared arrow function","hz":13263.585604610538,"aborted":false,"stats":{"moe":0.0000027064541182960567,"rme":3.5897285882970484,"sem":0.0000013808439379061514,"deviation":0.00001265564373675168,"mean":0.00007539439408091816,"variance":1.6016531839158205e-10}},{"name":"Inline arrow function","hz":14000.111123989991,"aborted":false,"stats":{"moe":0.0000019067418761679657,"rme":2.6694598151116686,"sem":9.728274878407989e-7,"deviation":0.000009229051895990053,"mean":0.00007142800447393898,"variance":8.51753988988776e-11}},{"name":"Inline destructuring","hz":13690.64312060436,"aborted":false,"stats":{"moe":0.0000018850829902305387,"rme":2.5807998471968023,"sem":9.617770358319076e-7,"deviation":0.000009124218103422613,"mean":0.00007304258764111704,"variance":8.325135599882496e-11}}],"fastest":["Inline arrow function"]},{"name":"Get deep prop (100000 users)","benchmarks":[{"name":"Compiled lodash/FP get","hz":18.936381333272738,"aborted":false,"stats":{"moe":0.0016922412445294524,"rme":3.2044925514301754,"sem":0.0008633883900660472,"deviation":0.005107874599432667,"mean":0.05280839999999999,"variance":0.000026090382923529425}},{"name":"Ramda props","hz":12.637311217355608,"aborted":false,"stats":{"moe":0.004529796013421633,"rme":5.724444197274591,"sem":0.002311120415011037,"deviation":0.014057996663436408,"mean":0.07913075675675674,"variance":0.0001976272701891892}},{"name":"Sanctuary props","hz":27.117410761826935,"aborted":false,"stats":{"moe":0.0008208059217319122,"rme":2.2258131335344236,"sem":0.0004187785314958736,"deviation":0.0029013827746797454,"mean":0.03687667708333333,"variance":0.000008418022005208338}},{"name":"Partial lenses","hz":36.28155068518001,"aborted":false,"stats":{"moe":0.0005053299683377708,"rme":1.8334154858987237,"sem":0.00025782141241722996,"deviation":0.002030087831462115,"mean":0.027562217741935485,"variance":0.000004121256603450554}},{"name":"Inline lodash get","hz":35.63821023739722,"aborted":false,"stats":{"moe":0.0007539187275873388,"rme":2.686831411566858,"sem":0.00038465241203435653,"deviation":0.003004231376428046,"mean":0.02805977049180328,"variance":0.000009025406163114752}},{"name":"Declared arrow function","hz":44.52006201566534,"aborted":false,"stats":{"moe":0.0006838111462610642,"rme":3.044331463854578,"sem":0.00034888323788829806,"deviation":0.0026340106832978293,"mean":0.02246178362573099,"variance":0.000006938012279727097}},{"name":"Inline arrow function","hz":44.59209963596156,"aborted":false,"stats":{"moe":0.0006449186875226094,"rme":2.875827837110176,"sem":0.0003290401466952089,"deviation":0.002484198630106027,"mean":0.0224254970760234,"variance":0.000006171242833820662}},{"name":"Inline destructuring","hz":43.836172686834395,"aborted":false,"stats":{"moe":0.0006430545963947011,"rme":2.818905233462071,"sem":0.00032808907979321484,"deviation":0.0024770182324591063,"mean":0.022812210526315782,"variance":0.000006135619323934835}}],"fastest":["Inline arrow function","Declared arrow function"]},{"name":"Get deep prop (5000 users)","benchmarks":[{"name":"Compiled lodash/FP get","hz":658.4345173357843,"aborted":false,"stats":{"moe":0.000018677219005452358,"rme":1.229772568102976,"sem":0.000009529193370128754,"deviation":0.00008888239863337176,"mean":0.001518753913519431,"variance":7.900080786821606e-9}},{"name":"Ramda props","hz":393.2000132121536,"aborted":false,"stats":{"moe":0.00011906872604216985,"rme":4.681782465293548,"sem":0.00006074935002151523,"deviation":0.0005118831219044018,"mean":0.002543234909456739,"variance":2.620243304905967e-7}},{"name":"Sanctuary props","hz":1100.6020539973433,"aborted":false,"stats":{"moe":0.000039177454329875345,"rme":4.311878670584791,"sem":0.000019988497107079258,"deviation":0.00018536569646937257,"mean":0.0009085936159832151,"variance":3.436044142757556e-8}},{"name":"Partial lenses","hz":2852.860649647013,"aborted":false,"stats":{"moe":0.00001810891382649398,"rme":5.166220766345339,"sem":0.000009239241748211216,"deviation":0.00008467904935034805,"mean":0.00035052535781014433,"variance":7.17054139887868e-9}},{"name":"Inline lodash get","hz":2956.4835374901627,"aborted":false,"stats":{"moe":0.00001747330178070617,"rme":5.1659529060255345,"sem":0.000008914949888115394,"deviation":0.00008219177682801813,"mean":0.00033823966456073234,"variance":6.755488178146739e-9}},{"name":"Declared arrow function","hz":9020.206931005034,"aborted":false,"stats":{"moe":0.000005838649263014837,"rme":5.266582454995386,"sem":0.0000029789026852116514,"deviation":0.0000273020940857792,"mean":0.00011086220168217137,"variance":7.454043414687395e-10}},{"name":"Inline arrow function","hz":9417.604802500857,"aborted":false,"stats":{"moe":0.000004521783856072962,"rme":4.258437335882357,"sem":0.0000023070325796290624,"deviation":0.000021269789432313233,"mean":0.00010618411166865367,"variance":4.5240394249494375e-10}},{"name":"Inline destructuring","hz":9789.278584082778,"aborted":false,"stats":{"moe":0.0000027238297267015226,"rme":2.6664328010287264,"sem":0.0000013897090442354707,"deviation":0.000013036626405302415,"mean":0.00010215257349259476,"variance":1.6995362803142818e-10}}],"fastest":["Inline destructuring","Inline arrow function"]}]};
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
@@ -127,7 +127,7 @@
               </thead>
             <tbody>
                             <tr>
-                <th>Description</th><td>Node.js 8.9.1 on Darwin 64-bit</td>
+                <th>Description</th><td>Node.js 8.11.2 on Linux 64-bit</td>
               </tr>
                             <tr>
                 <th>Name</th><td>Node.js</td>
@@ -142,13 +142,13 @@
                 <th>Memory</th><td>17.06 GB</td>
               </tr>
                             <tr>
-                <th>Timestamp</th><td>2018-02-09T13:29:17.717Z</td>
+                <th>Timestamp</th><td>2018-06-27T20:14:08.818Z</td>
               </tr>
                             <tr>
                 <th>Architecture</th><td>64</td>
               </tr>
                             <tr>
-                <th>Family</th><td>Darwin</td>
+                <th>Family</th><td>Linux</td>
               </tr>
               
             </tbody>
@@ -157,29 +157,55 @@
     </div>
 
     <div class="row">
-                      <div class="col-sm-6">
+                        <div class="col-sm-6">
         <div class="chart-wrapper">       
           <div class="chart-title">
-            Big array of users (100000)
+            Get name prop at root (100000 users)
           </div>
           <div class="chart-stage">
               <div id="chart-0"></div>            
           </div>
           <div class="chart-notes">
-            Fastest are: Inline destructuring,Inline function
+            Fastest is: Inline arrow function
           </div>
         </div>
       </div>
-                      <div class="col-sm-6">
+                        <div class="col-sm-6">
         <div class="chart-wrapper">       
           <div class="chart-title">
-            Medium array of users (5000)
+            Get name prop at root (5000 users)
           </div>
           <div class="chart-stage">
               <div id="chart-1"></div>            
           </div>
           <div class="chart-notes">
-            Fastest are: Inline destructuring,Compiled arrow function get
+            Fastest is: Inline arrow function
+          </div>
+        </div>
+      </div>
+                        <div class="col-sm-6">
+        <div class="chart-wrapper">       
+          <div class="chart-title">
+            Get deep prop (100000 users)
+          </div>
+          <div class="chart-stage">
+              <div id="chart-2"></div>            
+          </div>
+          <div class="chart-notes">
+            Fastest are: Inline arrow function,Declared arrow function
+          </div>
+        </div>
+      </div>
+                        <div class="col-sm-6">
+        <div class="chart-wrapper">       
+          <div class="chart-title">
+            Get deep prop (5000 users)
+          </div>
+          <div class="chart-stage">
+              <div id="chart-3"></div>            
+          </div>
+          <div class="chart-notes">
+            Fastest are: Inline destructuring,Inline arrow function
           </div>
         </div>
       </div>
@@ -213,46 +239,46 @@
 
 const makeJson = (suites) => suites.map(({ name, benchmarks }) => 
 
-  benchmarks.reduce((set,{name,hz})=> Object.assign(set,{[name]:hz}),{name})
+    benchmarks.reduce((set,{name,hz})=> Object.assign(set,{[name]:hz}),{name})
 );
 
 const JsonData = makeJson(rawData.suites);
 
 const charts = JsonData.map((data,i) => { 
-  c3.generate({
-    bindto: '#chart-' + i,
+    c3.generate({
+        bindto: '#chart-' + i,
+        data: {
+            json: [data],
+            type: 'bar',
+            keys: {
+                x: 'name',
+                value: Object.keys(data).slice(1)
+            },
+        },
+        axis: {
+            x: {
+                type: 'category'
+            }
+        }
+    });
+});
+
+
+c3.generate({
+    bindto: '#chart',
     data: {
-      json: [data],
-      type: 'bar',
-      keys: {
-        x: 'name',
-        value: Object.keys(data).slice(1)
-      },
+        json: JsonData,
+        type: 'bar',
+        keys: {
+            x: 'name',
+            value: Object.keys(JsonData[0]).slice(1)
+        },
     },
     axis: {
         x: {
             type: 'category'
         }
     }
-  });
-});
-
-
-c3.generate({
-  bindto: '#chart',
-  data: {
-    json: JsonData,
-    type: 'bar',
-    keys: {
-      x: 'name',
-      value: Object.keys(JsonData[0]).slice(1)
-    },
-  },
-  axis: {
-      x: {
-          type: 'category'
-      }
-  }
 });
   </script>
       
