@@ -13,10 +13,10 @@ const renderIndex = Ejs.compile(readFile(idxTemplatePath), { filename: idxTempla
 const renderCreateBench = require('./create');
 let data, _data;
 try {
-    _data = readFile(__dirname, '../../reports/report');
+    _data = readFile(__dirname, '../../reports/report.json');
     data = JSON.parse(_data);
 } catch (err) {
-    console.error('You throw bad json at me!!!', _data.slice(0, 200));
+    console.error('You throw bad json at me!!!', (_data || 'no data').slice(0, 200));
     process.exit(1);
 }
 // const PKG = require('../../package');
