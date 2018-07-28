@@ -1,6 +1,6 @@
 'use strict';
-const { omit, sample } = require('lodash');
-const { omit: omitFp } = require('lodash/fp');
+const { omit, sample, pick } = require('lodash');
+const { omit: omitFp, pick: pickFp } = require('lodash/fp');
 const { users } = require('../fake-data');
 const C = require('crocks');
 const R = require('ramda');
@@ -23,7 +23,20 @@ module.exports = (suite, benchmark) => {
             ([description, fn]) => benchmark(description, () => set.map(fn))
         );
     };
+    const pickProps = (set) => () => {
+
+        [
+            ['lodash/FP', pickFp(['name', 'phone','bio'])],
+            ['Ramda', R.pick(['name', 'phone','bio'])],
+            ['Croks', C.pick(['name', 'phone','bio'])],
+            ['Inlined lodash', (usr) => pick(usr, ['name', 'phone','bio'])],
+        ].map(
+            ([description, fn]) => benchmark(description, () => (set.map(fn)))
+        );
+    };
 
     suite(`Omit name of (${sets.bigSet.length} users)`, omitName(sets.bigSet));
     suite(`Omit name of (${sets.smallSet.length} users)`, omitName(sets.smallSet));
+    suite(`Pick 3 props of (${sets.bigSet.length} users into a new obj)`, pickProps(sets.bigSet));
+    suite(`Pick 3 props of (${sets.smallSet.length} users into a new obj)`, pickProps(sets.smallSet));
 };
