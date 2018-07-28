@@ -6,6 +6,7 @@ const { prop, props } = require('ramda');
 const R = require('ramda');
 const S = require('sanctuary');
 const L = require('partial.lenses');
+const { samplify } = require('../utils');
 
 const sets = users();
 
@@ -32,7 +33,7 @@ module.exports = (suite, benchmark) => {
             ['Inline arrow function', (usr) => usr.name],
             ['Inline destructuring', ({ name }) => name]
         ].map(
-            ([description, fn]) => benchmark(description, () => set.map(fn))
+            ([description, fn]) => benchmark(description, () => /* samplify(description) */ (set.map(fn)))
         );
     };
 
