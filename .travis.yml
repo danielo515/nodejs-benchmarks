@@ -1,5 +1,7 @@
 language: node_js
 cache: yarn
+env:
+  - NODE_ENV=production
 node_js:
  - "8.9.0"
 script:
