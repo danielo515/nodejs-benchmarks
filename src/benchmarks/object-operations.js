@@ -17,7 +17,9 @@ module.exports = (suite, benchmark) => {
 
         [
             ['lodash/FP', omitFp('name')],
-            ['Ramda', R.omit(['name'])],
+            ['Ramda omit', R.omit(['name'])],
+            ['Ramda dissoc', R.dissoc('name')],
+            ['Partial lenses', L.remove('name')],
             ['Croks', C.omit(['name'])],
             ['Inlined lodash', (usr) => omit(usr, 'name')],
         ].map(
@@ -31,6 +33,7 @@ module.exports = (suite, benchmark) => {
             ['Inlined lodash', (usr) => pick(usr, ['name', 'phone','bio'])],
             ['Sanctuary ap', S.ap({'name':S.I, 'phone':S.I,'bio':S.I})],
             ['Object translate', Ot({'name':'name', 'phone':'phone','bio':'bio'})],
+            ['Partial lenses', L.get(L.props('name', 'phone','bio'))],
             ['Ramda', R.pick(['name', 'phone','bio'])],
             ['Croks', C.pick(['name', 'phone','bio'])],
         ].map(
@@ -56,6 +59,6 @@ module.exports = (suite, benchmark) => {
     suite(`Omit name (${sets.smallSet.length} users)`, omitName(sets.smallSet));
     suite(`Pick 3 root props (${sets.bigSet.length} users)`, pickProps(sets.bigSet));
     suite(`Pick 3 root props (${sets.smallSet.length} users)`, pickProps(sets.smallSet));
-    suite(`Pick nested props preserving structure (${sets.bigSet.length} users)`, pickNestedProps(sets.bigSet));
-    suite(`Pick nested props preserving structure (${sets.smallSet.length} users)`, pickNestedProps(sets.smallSet));
+    suite(`Pick nested props same structure (${sets.bigSet.length} users)`, pickNestedProps(sets.bigSet));
+    suite(`Pick nested props same structure (${sets.smallSet.length} users)`, pickNestedProps(sets.smallSet));
 };
