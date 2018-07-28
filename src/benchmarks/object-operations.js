@@ -37,9 +37,24 @@ module.exports = (suite, benchmark) => {
             ([description, fn]) => benchmark(description, () => /* samplify (description) */ (set.map(fn)))
         );
     };
+    const pickNestedProps = (set) => () => {
+
+        [
+            ['lodash/FP', pickFp(['name','profile.email','meta.column', 'bio.birthday.year'])],
+            ['Inlined lodash', (usr) => pick(usr, ['name','profile.email','meta.column', 'bio.birthday.year'])],
+            ['Sanctuary ap', S.ap({'name':S.I, profile: S.ap({ email: S.I }), bio: S.ap({birthday: S.ap({year: S.I})})})],
+            ['Object translate', Ot({'name':'name', profile: { email: 'profile.email'}, 'bio':{birthday: {year: 'bio.birthday.year'}}})],
+            // ['Ramda', R.pick(['name', 'phone','bio'])],
+            // ['Croks', C.pick(['name', 'phone','bio'])],
+        ].map(
+            ([description, fn]) => benchmark(description, () => /* samplify (description) */ (set.map(fn)))
+        );
+    };
 
     suite(`Omit name of (${sets.bigSet.length} users)`, omitName(sets.bigSet));
     suite(`Omit name of (${sets.smallSet.length} users)`, omitName(sets.smallSet));
     suite(`Pick 3 props of (${sets.bigSet.length} users into a new obj)`, pickProps(sets.bigSet));
     suite(`Pick 3 props of (${sets.smallSet.length} users into a new obj)`, pickProps(sets.smallSet));
+    suite(`Pick nested props of (${sets.bigSet.length} users)`, pickNestedProps(sets.bigSet));
+    suite(`Pick nested props of (${sets.smallSet.length} users)`, pickNestedProps(sets.smallSet));
 };
