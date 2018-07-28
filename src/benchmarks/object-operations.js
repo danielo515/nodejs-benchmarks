@@ -44,6 +44,7 @@ module.exports = (suite, benchmark) => {
             ['Inlined lodash', (usr) => pick(usr, ['name','profile.email','meta.column', 'bio.birthday.year'])],
             ['Sanctuary ap', S.ap({'name':S.I, profile: S.ap({ email: S.I }), bio: S.ap({birthday: S.ap({year: S.I})})})],
             ['Object translate', Ot({'name':'name', profile: { email: 'profile.email'}, 'bio':{birthday: {year: 'bio.birthday.year'}}})],
+            ['Partial lenses', L.get(L.pickIn({name: [], profile: {email: []}, bio: {birthday: {year: []}}}))],
             // ['Ramda', R.pick(['name', 'phone','bio'])],
             // ['Croks', C.pick(['name', 'phone','bio'])],
         ].map(
@@ -51,10 +52,10 @@ module.exports = (suite, benchmark) => {
         );
     };
 
-    suite(`Omit name of (${sets.bigSet.length} users)`, omitName(sets.bigSet));
-    suite(`Omit name of (${sets.smallSet.length} users)`, omitName(sets.smallSet));
-    suite(`Pick 3 props of (${sets.bigSet.length} users into a new obj)`, pickProps(sets.bigSet));
-    suite(`Pick 3 props of (${sets.smallSet.length} users into a new obj)`, pickProps(sets.smallSet));
-    suite(`Pick nested props of (${sets.bigSet.length} users)`, pickNestedProps(sets.bigSet));
-    suite(`Pick nested props of (${sets.smallSet.length} users)`, pickNestedProps(sets.smallSet));
+    suite(`Omit name (${sets.bigSet.length} users)`, omitName(sets.bigSet));
+    suite(`Omit name (${sets.smallSet.length} users)`, omitName(sets.smallSet));
+    suite(`Pick 3 root props (${sets.bigSet.length} users)`, pickProps(sets.bigSet));
+    suite(`Pick 3 root props (${sets.smallSet.length} users)`, pickProps(sets.smallSet));
+    suite(`Pick nested props preserving structure (${sets.bigSet.length} users)`, pickNestedProps(sets.bigSet));
+    suite(`Pick nested props preserving structure (${sets.smallSet.length} users)`, pickNestedProps(sets.smallSet));
 };
