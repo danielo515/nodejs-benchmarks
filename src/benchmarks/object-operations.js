@@ -4,7 +4,8 @@ const { omit: omitFp, pick: pickFp } = require('lodash/fp');
 const { users } = require('../fake-data');
 const C = require('crocks');
 const R = require('ramda');
-const S = require('sanctuary');
+const S = require('sanctuary').unchecked;
+const Ot = require('object-translate');
 const L = require('partial.lenses');
 
 const sets = users();
@@ -27,11 +28,13 @@ module.exports = (suite, benchmark) => {
 
         [
             ['lodash/FP', pickFp(['name', 'phone','bio'])],
+            ['Inlined lodash', (usr) => pick(usr, ['name', 'phone','bio'])],
+            ['Sanctuary ap', S.ap({'name':S.I, 'phone':S.I,'bio':S.I})],
+            ['Object translate', Ot({'name':'name', 'phone':'phone','bio':'bio'})],
             ['Ramda', R.pick(['name', 'phone','bio'])],
             ['Croks', C.pick(['name', 'phone','bio'])],
-            ['Inlined lodash', (usr) => pick(usr, ['name', 'phone','bio'])],
         ].map(
-            ([description, fn]) => benchmark(description, () => (set.map(fn)))
+            ([description, fn]) => benchmark(description, () => /* samplify (description) */ (set.map(fn)))
         );
     };
 
