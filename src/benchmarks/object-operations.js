@@ -21,6 +21,12 @@ const makeBenchmark = benchmark => contenders => assertions => set =>
     return _ => contenders.forEach ( ([description, fn]) => benchmark(description, () => set.map(fn)) )
 }
 
+const makeSuite = suite => title => executor => sets =>
+    sets.forEach ( set => suite (
+        title.replace('#length', set.length)
+        , executor (set)
+    ));
+
 
 const shouldNotHave = props => props.map (p => negate(has(p)))
 const shouldInclude = props => S.map (has) (props)
@@ -33,7 +39,7 @@ const shouldInclude = props => S.map (has) (props)
 , "meta": { "column": "token", "type": "varchar" }, "bio": { "birthday": { "year": 1983, "day": 7 } } 
 } */
 
-module.exports = (suite, benchmark) => {
+module.exports = (_suite, benchmark) => {
 
     const makeBench = makeBenchmark (benchmark);
 
@@ -98,14 +104,21 @@ module.exports = (suite, benchmark) => {
             ...shouldInclude(['profile','name','bio'])
         ]);
 
-    suite(`Omit name (${sets.bigSet.length} users)`, omitName(sets.bigSet));
-    suite(`Omit name (${sets.smallSet.length} users)`, omitName(sets.smallSet));
-    suite(`Omit nested year prop (${sets.bigSet.length} users)`, omitNested(sets.bigSet));
-    suite(`Omit nested year prop (${sets.smallSet.length} users)`, omitNested(sets.smallSet));
-    suite(`Pick 3 root props (${sets.bigSet.length} users)`, pickProps(sets.bigSet));
-    suite(`Pick 3 root props (${sets.smallSet.length} users)`, pickProps(sets.smallSet));
-    suite(`Pick nested props same structure (${sets.bigSet.length} users)`, pickNestedProps(sets.bigSet));
-    suite(`Pick nested props same structure (${sets.smallSet.length} users)`, pickNestedProps(sets.smallSet));
-    suite(`Pick nested props to flat object (${sets.bigSet.length} users)`, pickNestedToFlat(sets.bigSet));
-    suite(`Pick nested props to flat object (${sets.smallSet.length} users)`, pickNestedToFlat(sets.smallSet));
+    const suite = makeSuite (_suite)
+    
+    suite (`Omit name (#length users)`)                        (omitName)           ([sets.bigSet, sets.smallSet])
+    suite (`Omit nested year prop (#length users)`)            (omitNested)         ([sets.bigSet, sets.smallSet])
+    suite (`Pick 3 root props (#length users)`)                (pickProps)          ([sets.bigSet, sets.smallSet])
+    suite (`Pick nested props same structure (#length users)`) (pickNestedProps)    ([sets.bigSet, sets.smallSet])
+    suite (`Pick nested props to flat object (#length users)`) (pickNestedToFlat)   ([sets.bigSet, sets.smallSet])
+    // suite(`Omit name (${sets.bigSet.length} users)`, omitName(sets.bigSet));
+    // suite(`Omit name (${sets.smallSet.length} users)`, omitName(sets.smallSet));
+    // suite(`Omit nested year prop (${sets.bigSet.length} users)`, omitNested(sets.bigSet));
+    // suite(`Omit nested year prop (${sets.smallSet.length} users)`, omitNested(sets.smallSet));
+    // suite(`Pick 3 root props (${sets.bigSet.length} users)`, pickProps(sets.bigSet));
+    // suite(`Pick 3 root props (${sets.smallSet.length} users)`, pickProps(sets.smallSet));
+    // suite(`Pick nested props same structure (${sets.bigSet.length} users)`, pickNestedProps(sets.bigSet));
+    // suite(`Pick nested props same structure (${sets.smallSet.length} users)`, pickNestedProps(sets.smallSet));
+    // suite(`Pick nested props to flat object (${sets.bigSet.length} users)`, pickNestedToFlat(sets.bigSet));
+    // suite(`Pick nested props to flat object (${sets.smallSet.length} users)`, pickNestedToFlat(sets.smallSet));
 };
