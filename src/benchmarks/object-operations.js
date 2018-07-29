@@ -48,8 +48,16 @@ module.exports = (suite, benchmark) => {
             ['Sanctuary ap', S.ap({'name':S.I, profile: S.ap({ email: S.I }), bio: S.ap({birthday: S.ap({year: S.I})})})],
             ['Object translate', Ot({'name':'name', profile: { email: 'profile.email'}, 'bio':{birthday: {year: 'bio.birthday.year'}}})],
             ['Partial lenses', L.get(L.pickIn({name: [], profile: {email: []}, bio: {birthday: {year: []}}}))],
-            // ['Ramda', R.pick(['name', 'phone','bio'])],
-            // ['Croks', C.pick(['name', 'phone','bio'])],
+        ].map(
+            ([description, fn]) => benchmark(description, () => /* samplify (description) */ (set.map(fn)))
+        );
+    };
+    const pickNestedToFlat = (set) => () => {
+
+        [
+            ['Sanctuary ap', S.ap({'name':S.I, profile: S.prop('email'), bio: S.props(['birthday','year'])})],
+            ['Object translate', Ot({'name':'name', profile: 'profile.email', 'bio':'bio.birthday.year'})],
+            ['Partial lenses', L.get(L.pick({name: 'name', profile: ['profile','email'], bio:['bio','birthday','year']}))],
         ].map(
             ([description, fn]) => benchmark(description, () => /* samplify (description) */ (set.map(fn)))
         );
@@ -61,4 +69,6 @@ module.exports = (suite, benchmark) => {
     suite(`Pick 3 root props (${sets.smallSet.length} users)`, pickProps(sets.smallSet));
     suite(`Pick nested props same structure (${sets.bigSet.length} users)`, pickNestedProps(sets.bigSet));
     suite(`Pick nested props same structure (${sets.smallSet.length} users)`, pickNestedProps(sets.smallSet));
+    suite(`Pick nested props to flat object (${sets.bigSet.length} users)`, pickNestedToFlat(sets.bigSet));
+    suite(`Pick nested props to flat object (${sets.smallSet.length} users)`, pickNestedToFlat(sets.smallSet));
 };
