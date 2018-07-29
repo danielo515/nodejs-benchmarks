@@ -26,6 +26,17 @@ module.exports = (suite, benchmark) => {
             ([description, fn]) => benchmark(description, () => set.map(fn))
         );
     };
+    const omitNested = (set) => () => {
+
+        [
+            ['lodash/FP', omitFp('bio.birthday.year')],
+            ['Ramda dissocPath', R.dissocPath(['bio','birthday','year'])],
+            ['Partial lenses', L.remove(['bio','birthday','year'])],
+            ['Inlined lodash', (usr) => omit(usr, 'bio.birthday.year')],
+        ].map(
+            ([description, fn]) => benchmark(description, () =>/*  samplify (description) */ (set.map(fn)))
+        );
+    };
     const pickProps = (set) => () => {
 
         [
@@ -65,6 +76,8 @@ module.exports = (suite, benchmark) => {
 
     suite(`Omit name (${sets.bigSet.length} users)`, omitName(sets.bigSet));
     suite(`Omit name (${sets.smallSet.length} users)`, omitName(sets.smallSet));
+    suite(`Omit nested year prop (${sets.bigSet.length} users)`, omitNested(sets.bigSet));
+    suite(`Omit nested year prop (${sets.smallSet.length} users)`, omitNested(sets.smallSet));
     suite(`Pick 3 root props (${sets.bigSet.length} users)`, pickProps(sets.bigSet));
     suite(`Pick 3 root props (${sets.smallSet.length} users)`, pickProps(sets.smallSet));
     suite(`Pick nested props same structure (${sets.bigSet.length} users)`, pickNestedProps(sets.bigSet));
