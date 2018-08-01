@@ -1,5 +1,5 @@
 'use strict';
-const joi = require ('joi');
+const Joi = require ('joi');
 const { conforms, isNumber, isString } = require ('lodash');
 
 const user = {
