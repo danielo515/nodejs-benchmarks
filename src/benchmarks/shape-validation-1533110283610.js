@@ -31,7 +31,7 @@ module.exports = (suite, benchmark) => {
                 sex: isString,
                 email: isString,
                 age: isNumber
-            });
+            })(user);
         });
 
     });
