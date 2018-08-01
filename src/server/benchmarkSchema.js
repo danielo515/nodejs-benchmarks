@@ -16,6 +16,8 @@ const dependency = Joi.object().keys({
 module.exports = Joi.object().keys({
     title: lowStr,
     description: str,
+    name: Joi.string().optional(),
+    email: Joi.email().optional(),
     dependencies: Joi.array().items(dependency),
     preTest: Joi.string().optional(),
     suites: Joi.array().items(Joi.object().keys({
