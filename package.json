@@ -40,6 +40,7 @@
     "faker": "^4.1.0",
     "hapi": "^17.2.0",
     "inquirer": "^5.0.1",
+    "io-ts": "^1.2.1",
     "joi": "^13.1.2",
     "livescript": "^1.5.0",
     "lodash": "^4.17.4",
@@ -48,6 +49,7 @@
     "partial.lenses": "^13.13.2",
     "ramda": "^0.25.0",
     "recursive-readdir": "^2.2.1",
+    "runtypes": "^2.1.6",
     "sanctuary": "^0.15.0",
     "transducers-js": "^0.4.174"
   },
