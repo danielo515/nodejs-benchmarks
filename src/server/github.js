@@ -36,7 +36,7 @@ const normalizeStr = pipe(deburr, kebabCase);
 
 const createFile = async ({
     content,
-    author = { name: 'anonimous', email: 'nobody@nowhere.com' },
+    author = { name: 'anonimous', email: 'nobody@example.com' },
     message = 'Just another benchmark for our growing collection',
     name = ''
 } = {}) => {

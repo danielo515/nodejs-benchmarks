@@ -29,9 +29,9 @@ const register = async (server, options) => {
             },
             handler: function ({ payload }, h) {
 
-                const { title } = payload;
+                const { title, name, email } = payload;
                 const src = createBenchMarkSrc(payload);
-                return createFile({ content: src, name: title })
+                return createFile({ content: src, name: title, author: { name, email } })
                     .then(constant({ src }))
                     .catch(err => {
                         console.error('Failed creating the file', err);
