@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <!-- Demo Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <title>src/benchmarks/decide-indexby-implementation-1533207707836.js</title>
+  <script>
+    var rawData = {"name":"src/benchmarks/decide-indexby-implementation-1533207707836.js","suites":[{"name":"Decide indexby implementation (2 users)","benchmarks":[{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Current implementation (pipe, map, ap and insert)"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Current implementation (pipe, map, ap and insert)","events":{"complete":[null],"start":[null]},"id":1,"stats":{"moe":1.0427251142316924e-7,"rme":1.5581395781948755,"sem":5.3200260930188385e-8,"deviation":5.13044736804435e-7,"mean":0.000006692116218751742,"sample":[0.000010988977120908485,0.000006770225473090861,0.000006924424238357268,0.000006670882948157401,0.000006689668831980013,0.000006634562523422861,0.0000065765198001249216,0.000006577011617738913,0.000006578383385384135,0.000006486784259837602,0.00000665449406620862,0.000006519311805121799,0.00000661102598376015,0.000006725322548407245,0.000006590332292317302,0.000006535334415990007,0.00000650287008119925,0.000006427808494690818,0.0000070191811367895065,0.000006553544034978139,0.000006543710430980638,0.000006630809618988133,0.000006620242598376015,0.000006669475702685822,0.000006680980012492192,0.000006763327920049969,0.000006756278326046221,0.000006806403997501561,0.000006718345658963148,0.0000066581577763897565,0.000006738783760149906,0.000006804753029356652,0.0000067133865084322305,0.000006671607495315428,0.0000065640688319800125,0.0000067261848844472206,0.000006684449094316053,0.000006718906933166771,0.000006657658338538413,0.000006714269456589632,0.000006604634603372892,0.0000065323517801374145,0.000006745432979387883,0.000006736043472829481,0.000006729101436602124,0.00000660538388507183,0.000006545456464709557,0.000006607624734540912,0.000006570767895065584,0.00000653978913179263,0.000006579715677701436,0.0000064648560899437844,0.000006469980512179887,0.000006562499812617114,0.000006531771267957527,0.000006616623860087445,0.000006560228107432855,0.000006672975640224859,0.000006659028232354778,0.000006588969893816365,0.0000065617089319175515,0.00000656176314803248,0.000006661241349156777,0.00000880455290443473,0.00000661251118051218,0.0000066133381636477205,0.00000651167170518426,0.0000065797542785758905,0.000006494758525921299,0.000006622537039350406,0.000006594779138038726,0.00000653295890068707,0.000006545449718925672,0.000006560279200499688,0.000006653950405996252,0.000006568359275452842,0.000006628382261086821,0.0000065937262960649596,0.0000065848728294815745,0.000006492077326670831,0.000006541486945658963,0.000006563441848844472,0.0000066218669581511554,0.0000066424173641474075,0.000006563453216739537,0.000006524264209868833,0.000006690997501561524,0.000006638686945658963,0.0000065532111180512185,0.0000065688729544034975,0.000006698991005621487,0.000006569008619612742,0.000006609736164896939],"variance":2.6321490196273197e-13},"times":{"cycle":0.05357039033110769,"elapsed":5.68,"period":0.000006692116218751742,"timeStamp":1623436607374},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":3719,"_repeat":null,"_destroyed":false},"running":false,"count":8005,"cycles":3,"hz":149429.56268421272},{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"New implementation ( foldMap, ap and singleton)"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"New implementation ( foldMap, ap and singleton)","events":{"complete":[null],"start":[null]},"id":2,"stats":{"moe":2.998369153102574e-8,"rme":0.7676297592807751,"sem":1.5297801801543746e-8,"deviation":1.4910452808729494e-7,"mean":0.000003906009527186483,"sample":[0.00000390379152631185,0.000003859496444344637,0.000004114348379369713,0.000003895651620630287,0.000003919534770566659,0.000003882394266037877,0.000003776517703420915,0.0000038652127404745865,0.000003860789505202485,0.000003890934725653117,0.000003854082790628041,0.000003831121116850064,0.000004049287746088779,0.000003899711430496295,0.000003848139755969758,0.000003890486862789131,0.000003827010479826334,0.00000385207867355341,0.000003880871247847893,0.0000039324392544352124,0.00000385595486189086,0.0000039302426079796395,0.0000042600312149112955,0.00000395254075903885,0.000003952855827532001,0.000004157048207201138,0.000003952875140354817,0.0000039526112732989,0.000003957728871921551,0.000003927770716370986,0.0000038552846021408785,0.0000041089710307657755,0.000003851497866606781,0.000004229098660079347,0.000003848407290964893,0.000005012699228984205,0.000003858104873119246,0.000003925238790328617,0.000003858244703944906,0.0000038613801931282285,0.000003891557227337376,0.0000038651545025825285,0.00000390336582079497,0.000003883019163111011,0.000004164054719664646,0.000003895338797814208,0.000003870211842203757,0.0000038636364248821015,0.000003844059435586496,0.0000038307621827981135,0.000003840431095141852,0.000003911224118571749,0.00000388003540684183,0.0000037611295755670336,0.000003770115203233775,0.000003818092746463058,0.0000037847920503031666,0.000003819913092297328,0.0000038101265064750355,0.000003825139681113856,0.000003856556029642937,0.000003881585448012576,0.000003889057489333034,0.000004111816603039149,0.000003846203608054495,0.00000386731379594281,0.000003909528931806273,0.000003840274047458642,0.000003949059061306984,0.000003868477730369039,0.0000039416135189759715,0.00000381671255333483,0.000003837628789580058,0.00000400879968560521,0.000003792256680889288,0.00000383245579758964,0.000003835888913840856,0.0000038471658806796915,0.000003829084587169698,0.000003868523841604911,0.0000038032929860019463,0.0000038291053222546595,0.000004037421887865858,0.0000038469775432292835,0.000003907692941088404,0.000003911702447788008,0.000003840056366494498,0.00000382583449359982,0.000003870678269331537,0.00000381971914065424,0.000003832145370162437,0.000003866590837637547,0.000004049214462160341,0.0000038057954188187735,0.000003820027247548469],"variance":2.2232160296134928e-14},"times":{"cycle":0.05218038127368422,"elapsed":5.54,"period":0.000003906009527186483,"timeStamp":1623436613055},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":9401,"_repeat":null,"_destroyed":false},"running":false,"count":13359,"cycles":5,"hz":256015.76059654538}],"fastest":["New implementation ( foldMap, ap and singleton)"]},{"name":"Decide indexby implementation (5000)","benchmarks":[{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Current implementation (pipe, map, ap and insert)"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Current implementation (pipe, map, ap and insert)","events":{"complete":[null],"start":[null]},"id":3,"stats":{"moe":0.0595542235639667,"rme":3.5990410489791085,"sem":0.023163836469843133,"deviation":0.05673957983638765,"mean":1.6547247656666668,"sample":[1.580825424,1.7302080370000001,1.603205846,1.648984081,1.6638407210000001,1.701284485],"variance":0.003219379920009808},"times":{"cycle":1.6547247656666668,"elapsed":19.841,"period":1.6547247656666668,"timeStamp":1623436618601},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":14946,"_repeat":null,"_destroyed":false},"running":false,"count":1,"cycles":1,"hz":0.6043301102084571},{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"New implementation ( foldMap, ap and singleton)"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"New implementation ( foldMap, ap and singleton)","events":{"complete":[null],"start":[null]},"id":4,"stats":{"moe":0.0030553203858932603,"rme":0.17903514115792152,"sem":0.0011883782131051188,"deviation":0.00291092024354799,"mean":1.7065478688333335,"sample":[1.705711241,1.70764907,1.702863311,1.706870961,1.7047812759999998,1.711411354],"variance":0.000008473456664297489},"times":{"cycle":1.7065478688333335,"elapsed":20.502,"period":1.7065478688333335,"timeStamp":1623436638443},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":34789,"_repeat":null,"_destroyed":false},"running":false,"count":1,"cycles":1,"hz":0.5859782888385318}],"fastest":["New implementation ( foldMap, ap and singleton)","Current implementation (pipe, map, ap and insert)"]}]};
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.min.js"></script>
+
+  <!-- Dashboard -->
+  <style>
+      .keen-dashboard {
+    background: #f2f2f2;
+    font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .keen-dataviz {
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+  .keen-dataviz-title {
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 2px 2px 0 0;
+    font-size: 13px;
+    padding: 2px 10px 0;
+    text-transform: uppercase;
+  }
+  .keen-dataviz-stage {
+    padding: 10px;
+  }
+  
+  .keen-dataviz-notes {
+    background: #fbfbfb;
+    border-radius: 0 0 2px 2px;
+    border-top: 1px solid #e7e7e7;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  
+  .keen-dataviz .keen-dataviz-metric {
+    border-radius: 2px;
+  }
+  
+  .keen-dataviz .keen-spinner-indicator {
+    border-top-color: rgba(0, 187, 222, .4);
+  }
+  
+  .keen-dashboard .chart-wrapper {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .keen-dashboard .chart-wrapper .chart-title {
+    border-bottom: 1px solid #d7d7d7;
+    color: #666;
+    font-size: 14px;
+    font-weight: 200;
+    padding: 7px 10px 4px;
+  }
+  
+  .keen-dashboard .chart-wrapper .chart-stage {
+    overflow: hidden;
+    padding: 5px 10px;
+    position: relative;
+  }
+  
+  .keen-dashboard .chart-wrapper .chart-notes {
+    background: #fbfbfb;
+    border-top: 1px solid #e2e2e2;
+    color: #808080;
+    font-size: 12px;
+    padding: 8px 10px 5px;
+  }
+  
+  .keen-dashboard .chart-wrapper .keen-dataviz,
+  .keen-dashboard .chart-wrapper .keen-dataviz-title,
+  .keen-dashboard .chart-stage .chart-title {
+    border: medium none;
+  }
+  </style>
+</head>
+<body class="keen-dashboard" style="padding-top: 80px;">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="https://github.com/danielo515/nodejs-benchmarks">Source</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <table class="table table-bordered table-striped text-center">
+            <thead>
+                <th colspan="2" class="text-center">Platform</th>
+              </thead>
+            <tbody>
+                            <tr>
+                <th>Description</th><td>Node.js 8.9.0 on Linux 64-bit</td>
+              </tr>
+                            <tr>
+                <th>Name</th><td>Node.js</td>
+              </tr>
+                            <tr>
+                <th>Cpu</th><td>Intel(R) Xeon(R) CPU</td>
+              </tr>
+                            <tr>
+                <th>N. of cpus</th><td>2</td>
+              </tr>
+                            <tr>
+                <th>Memory</th><td>8.36 GB</td>
+              </tr>
+                            <tr>
+                <th>Timestamp</th><td>2021-06-11T18:51:45.170Z</td>
+              </tr>
+                            <tr>
+                <th>Architecture</th><td>64</td>
+              </tr>
+                            <tr>
+                <th>Family</th><td>Linux</td>
+              </tr>
+              
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="row">
+                      <div class="col-sm-6">
+        <div class="chart-wrapper">       
+          <div class="chart-title">
+            Decide indexby implementation (2 users)
+          </div>
+          <div class="chart-stage">
+              <div id="chart-0"></div>            
+          </div>
+          <div class="chart-notes">
+            Fastest is: New implementation ( foldMap, ap and singleton)
+          </div>
+        </div>
+      </div>
+                      <div class="col-sm-6">
+        <div class="chart-wrapper">       
+          <div class="chart-title">
+            Decide indexby implementation (5000)
+          </div>
+          <div class="chart-stage">
+              <div id="chart-1"></div>            
+          </div>
+          <div class="chart-notes">
+            Fastest are: New implementation ( foldMap, ap and singleton),Current implementation (pipe, map, ap and insert)
+          </div>
+        </div>
+      </div>
+        
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            All suites at scale
+          </div>
+          <div class="chart-stage">
+            <div id="chart"></div>
+          </div>
+          <div class="chart-notes">
+            Here you can see the results of all suites at once
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container-fluid">
+    <p class="small text-muted">Built with &#9829; by <a href="https://keen.github.io/dashboards/">Keen IO</a></p>
+  </div>
+
+  <script>
+    'use strict';
+
+const makeJson = (suites) => suites.map(({ name, benchmarks }) => 
+
+    benchmarks.reduce((set,{name,hz})=> Object.assign(set,{[name]:hz}),{name})
+);
+
+const JsonData = makeJson(rawData.suites);
+
+const charts = JsonData.map((data,i) => { 
+    c3.generate({
+        bindto: '#chart-' + i,
+        data: {
+            json: [data],
+            type: 'bar',
+            keys: {
+                x: 'name',
+                value: Object.keys(data).slice(1)
+            },
+        },
+        axis: {
+            x: {
+                type: 'category'
+            }
+        }
+    });
+});
+
+
+c3.generate({
+    bindto: '#chart',
+    data: {
+        json: JsonData,
+        type: 'bar',
+        keys: {
+            x: 'name',
+            value: Object.keys(JsonData[0]).slice(1)
+        },
+    },
+    axis: {
+        x: {
+            type: 'category'
+        }
+    }
+});
+  </script>
+      
+
+</body>
+</html>

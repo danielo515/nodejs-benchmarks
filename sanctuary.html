@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <!-- Demo Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <title>src/benchmarks/sanctuary.js</title>
+  <script>
+    var rawData = {"name":"src/benchmarks/sanctuary.js","suites":[{"name":"S.map medium array of users (500): Plain get","benchmarks":[{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Type safe get-name"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Type safe get-name","events":{"complete":[null],"start":[null]},"id":91,"stats":{"moe":0.008242979507015273,"rme":0.8394280089532926,"sem":0.003368606255421035,"deviation":0.008912494416740585,"mean":0.9819757524285715,"sample":[0.981825224,0.992251707,0.987802883,0.96781866,0.981681893,0.972997406,0.989452494],"variance":0.0000794325567284321},"times":{"cycle":0.9819757524285715,"elapsed":14.357,"period":0.9819757524285715,"timeStamp":1623437260781},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":657127,"_repeat":null,"_destroyed":false},"running":false,"count":1,"cycles":1,"hz":1.0183550841523854},{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Normal get-name"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Normal get-name","events":{"complete":[null],"start":[null]},"id":92,"stats":{"moe":2.0134631724668645e-7,"rme":0.24604869836556803,"sem":1.0272771288096247e-7,"deviation":0.0000010065219160059717,"mean":0.00008183189693104378,"sample":[0.00008207684013050571,0.00008171547068403908,0.00008347742926829269,0.00008159452357723577,0.00008201039024390243,0.00008191276260162602,0.00008162951544715447,0.00008417714471544715,0.00008151438961038961,0.00008166149025974025,0.00008162569480519482,0.00008329807792207792,0.00008127952110389611,0.00008209620941558441,0.00008472420779220778,0.00008167764297253635,0.00008367144911147012,0.00008104395315024232,0.0000809643747980614,0.00008118734894991922,0.0000811592633279483,0.00008389730371567044,0.00008096415508885298,0.00008144370759289176,0.000080993450726979,0.00008103532148626817,0.00008323586591276251,0.00008123541680129242,0.00008114525686591276,0.00008095843780290792,0.00008228683360258482,0.00008412046365105008,0.0000819443182552504,0.00008180290306946689,0.0000813986704361874,0.00008101336348949919,0.00008113256542810986,0.00008331677544426494,0.00008106403069466882,0.00008169265105008078,0.00008116560581583199,0.00008147666074313409,0.00008433623747980614,0.00008134947495961227,0.00008151598546042003,0.0000814789563812601,0.00008120215024232632,0.00008335251211631664,0.00008159004523424878,0.00008118413408723749,0.00008082192084006462,0.00008184868336025848,0.00008432115347334411,0.00008123136510500807,0.00008130067689822294,0.00008135707915993538,0.00008146720355411955,0.00008163398222940226,0.00008108611308562196,0.00008127569466882069,0.00008117529886914378,0.00008118614701130857,0.00008161440872374798,0.0000838797802907916,0.00008116068336025848,0.00008143780936995154,0.00008170918901453957,0.00008147336187399031,0.00008322055411954766,0.00008132301938610662,0.00008131414862681744,0.00008117987560581584,0.00008123392084006461,0.00008337949757673667,0.0000817739224555735,0.00008129178513731826,0.00008104377059773829,0.00008117540226171245,0.00008359832794830371,0.000081154647819063,0.00008099501615508886,0.00008111048788368336,0.00008094140226171243,0.00008099494830371567,0.00008102110662358643,0.00008186164620355412,0.00008087787075928918,0.0000815547576736672,0.00008201226009693054,0.00008407529563812601,0.00008119479483037156,0.00008143213247172859,0.00008160889660743133,0.00008149093053311793,0.00008402674313408724,0.00008116343941841681],"variance":1.0130863674003322e-12},"times":{"cycle":0.0506539442003161,"elapsed":5.547,"period":0.00008183189693104378,"timeStamp":1623437275201},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":671485,"_repeat":null,"_destroyed":false},"running":false,"count":619,"cycles":4,"hz":12220.173764793171}],"fastest":["Normal get-name"]},{"name":"S.map medium array of users (500): Deep get","benchmarks":[{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Deep type safe prop get"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Deep type safe prop get","events":{"complete":[null],"start":[null]},"id":93,"stats":{"moe":0.004195199501611956,"rme":0.4382808357624207,"sem":0.0017144256238708444,"deviation":0.004535943842079016,"mean":0.9571943738571429,"sample":[0.954004583,0.962185774,0.954977934,0.964673474,0.953393616,0.957529763,0.953595473],"variance":0.00002057478653849454},"times":{"cycle":0.9571943738571429,"elapsed":13.748,"period":0.9571943738571429,"timeStamp":1623437280750},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":677096,"_repeat":null,"_destroyed":false},"running":false,"count":1,"cycles":1,"hz":1.0447198889922076},{"options":{"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Deep NON-type safe prop get"},"async":false,"delay":0,"initCount":1,"maxTime":5,"minSamples":5,"minTime":0.05,"name":"Deep NON-type safe prop get","events":{"complete":[null],"start":[null]},"id":94,"stats":{"moe":4.67732046374125e-7,"rme":0.31604227521594647,"sem":2.3863879917047195e-7,"deviation":0.000002288942951494485,"mean":0.00014799667103223183,"sample":[0.00014943994350282488,0.0001490683361581921,0.0001494905197740113,0.00014948727966101696,0.0001483126497175141,0.00014921309322033898,0.00014734345352112674,0.00014904558028169015,0.00015036181126760562,0.000147502661971831,0.00014748504788732392,0.00014974309577464788,0.00014853073521126761,0.00014870875492957746,0.0001478516797752809,0.00014787058707865168,0.00015634736516853933,0.00014780697191011237,0.00014844921629213482,0.00014768469943820227,0.00014783714325842696,0.00014792470786516854,0.0001477887640449438,0.00014045341573033708,0.00014769429494382023,0.0001488378258426966,0.00014796758988764046,0.0001471030926966292,0.00015467495505617977,0.00014737467696629213,0.00014719602808988764,0.00014748725561797754,0.00014769536516853933,0.00014837261624649862,0.00014755340336134454,0.00014773611764705883,0.00014797885714285712,0.00014765726050420166,0.0001472839299719888,0.00014767183473389357,0.00014813781232492999,0.00015077824649859943,0.00014262956582633055,0.0001486732016806723,0.0001497434761904762,0.00014893445098039214,0.00014837968347338935,0.00014793824649859944,0.0001474657142857143,0.00014785964145658264,0.00014956621848739496,0.0001479721344537815,0.0001405419523809524,0.0001478569663865546,0.00014827426890756302,0.00014763559383753502,0.00014757546778711484,0.00014761419327731092,0.00014763600280112045,0.00015089803921568626,0.000148625081232493,0.000147330918767507,0.00014215391596638657,0.00014859705042016805,0.00014813206162464987,0.0001479536330532213,0.00014802298039215685,0.00014868408403361343,0.00014977843417366947,0.00014817773669467788,0.00014841828571428571,0.00014827530812324929,0.00014017818767507004,0.00014823983473389357,0.00014733391316526612,0.00014768256022408964,0.00014851889355742298,0.00014963949579831933,0.00014836926330532213,0.0001490600756302521,0.00014888257983193277,0.00014854174789915968,0.0001403695182072829,0.00014841774789915968,0.00014802766666666665,0.0001500399943977591,0.00014933323249299721,0.00014804263585434173,0.0001480440168067227,0.00014796826330532213,0.00014702011484593838,0.00014769100840336135],"variance":5.239259835196285e-12},"times":{"cycle":0.052834811558506764,"elapsed":5.47,"period":0.00014799667103223183,"timeStamp":1623437294560},"_timerId":{"_called":true,"_idleTimeout":1,"_idlePrev":null,"_idleNext":null,"_idleStart":690846,"_repeat":null,"_destroyed":false},"running":false,"count":357,"cycles":4,"hz":6756.908740077082}],"fastest":["Deep NON-type safe prop get"]}]};
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.min.js"></script>
+
+  <!-- Dashboard -->
+  <style>
+      .keen-dashboard {
+    background: #f2f2f2;
+    font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .keen-dataviz {
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+  .keen-dataviz-title {
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 2px 2px 0 0;
+    font-size: 13px;
+    padding: 2px 10px 0;
+    text-transform: uppercase;
+  }
+  .keen-dataviz-stage {
+    padding: 10px;
+  }
+  
+  .keen-dataviz-notes {
+    background: #fbfbfb;
+    border-radius: 0 0 2px 2px;
+    border-top: 1px solid #e7e7e7;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 11px;
+    padding: 0 10px;
+  }
+  
+  .keen-dataviz .keen-dataviz-metric {
+    border-radius: 2px;
+  }
+  
+  .keen-dataviz .keen-spinner-indicator {
+    border-top-color: rgba(0, 187, 222, .4);
+  }
+  
+  .keen-dashboard .chart-wrapper {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .keen-dashboard .chart-wrapper .chart-title {
+    border-bottom: 1px solid #d7d7d7;
+    color: #666;
+    font-size: 14px;
+    font-weight: 200;
+    padding: 7px 10px 4px;
+  }
+  
+  .keen-dashboard .chart-wrapper .chart-stage {
+    overflow: hidden;
+    padding: 5px 10px;
+    position: relative;
+  }
+  
+  .keen-dashboard .chart-wrapper .chart-notes {
+    background: #fbfbfb;
+    border-top: 1px solid #e2e2e2;
+    color: #808080;
+    font-size: 12px;
+    padding: 8px 10px 5px;
+  }
+  
+  .keen-dashboard .chart-wrapper .keen-dataviz,
+  .keen-dashboard .chart-wrapper .keen-dataviz-title,
+  .keen-dashboard .chart-stage .chart-title {
+    border: medium none;
+  }
+  </style>
+</head>
+<body class="keen-dashboard" style="padding-top: 80px;">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="https://github.com/danielo515/nodejs-benchmarks">Source</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <table class="table table-bordered table-striped text-center">
+            <thead>
+                <th colspan="2" class="text-center">Platform</th>
+              </thead>
+            <tbody>
+                            <tr>
+                <th>Description</th><td>Node.js 8.9.0 on Linux 64-bit</td>
+              </tr>
+                            <tr>
+                <th>Name</th><td>Node.js</td>
+              </tr>
+                            <tr>
+                <th>Cpu</th><td>Intel(R) Xeon(R) CPU</td>
+              </tr>
+                            <tr>
+                <th>N. of cpus</th><td>2</td>
+              </tr>
+                            <tr>
+                <th>Memory</th><td>8.36 GB</td>
+              </tr>
+                            <tr>
+                <th>Timestamp</th><td>2021-06-11T18:51:45.170Z</td>
+              </tr>
+                            <tr>
+                <th>Architecture</th><td>64</td>
+              </tr>
+                            <tr>
+                <th>Family</th><td>Linux</td>
+              </tr>
+              
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="row">
+                      <div class="col-sm-6">
+        <div class="chart-wrapper">       
+          <div class="chart-title">
+            S.map medium array of users (500): Plain get
+          </div>
+          <div class="chart-stage">
+              <div id="chart-0"></div>            
+          </div>
+          <div class="chart-notes">
+            Fastest is: Normal get-name
+          </div>
+        </div>
+      </div>
+                      <div class="col-sm-6">
+        <div class="chart-wrapper">       
+          <div class="chart-title">
+            S.map medium array of users (500): Deep get
+          </div>
+          <div class="chart-stage">
+              <div id="chart-1"></div>            
+          </div>
+          <div class="chart-notes">
+            Fastest is: Deep NON-type safe prop get
+          </div>
+        </div>
+      </div>
+        
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            All suites at scale
+          </div>
+          <div class="chart-stage">
+            <div id="chart"></div>
+          </div>
+          <div class="chart-notes">
+            Here you can see the results of all suites at once
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container-fluid">
+    <p class="small text-muted">Built with &#9829; by <a href="https://keen.github.io/dashboards/">Keen IO</a></p>
+  </div>
+
+  <script>
+    'use strict';
+
+const makeJson = (suites) => suites.map(({ name, benchmarks }) => 
+
+    benchmarks.reduce((set,{name,hz})=> Object.assign(set,{[name]:hz}),{name})
+);
+
+const JsonData = makeJson(rawData.suites);
+
+const charts = JsonData.map((data,i) => { 
+    c3.generate({
+        bindto: '#chart-' + i,
+        data: {
+            json: [data],
+            type: 'bar',
+            keys: {
+                x: 'name',
+                value: Object.keys(data).slice(1)
+            },
+        },
+        axis: {
+            x: {
+                type: 'category'
+            }
+        }
+    });
+});
+
+
+c3.generate({
+    bindto: '#chart',
+    data: {
+        json: JsonData,
+        type: 'bar',
+        keys: {
+            x: 'name',
+            value: Object.keys(JsonData[0]).slice(1)
+        },
+    },
+    axis: {
+        x: {
+            type: 'category'
+        }
+    }
+});
+  </script>
+      
+
+</body>
+</html>
